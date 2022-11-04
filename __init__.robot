@@ -1,7 +1,9 @@
 *** Settings ***
-Suite Setup  HAHAHAHAHHAHAHAHAH
+
+Suite Setup  Open Website The Oppenheimer Project
 
 Library    SeleniumLibrary
-# Library    ./Web_Initialise.py  Chrome
+
 Suite Teardown  Close All Browsers
+
 Resource  ./Resources/resources.robot

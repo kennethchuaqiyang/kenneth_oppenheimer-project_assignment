@@ -1,78 +1,259 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0 (Python 3.10.8 on darwin)" generated="20221104 09:53:26.282" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0 (Python 3.10.8 on darwin)" generated="20221104 13:19:57.089" rpa="false" schemaversion="3">
 <suite id="s1" name="Kenneth Robot Assignment" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment">
-<kw name="HAHAHAHAHHAHAHAHAH" library="resources" type="SETUP">
+<kw name="Open Website The Oppenheimer Project" library="resources" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>http://localhost:8080/</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221104 09:53:26.343" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
-<status status="PASS" starttime="20221104 09:53:26.343" endtime="20221104 09:53:40.271"/>
+<msg timestamp="20221104 13:19:57.169" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20221104 13:19:57.169" endtime="20221104 13:20:08.972"/>
 </kw>
-<status status="PASS" starttime="20221104 09:53:26.343" endtime="20221104 09:53:40.271"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://*[@id="contents-main"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221104 13:20:08.972" endtime="20221104 13:20:09.172"/>
+</kw>
+<status status="PASS" starttime="20221104 13:19:57.168" endtime="20221104 13:20:09.172"/>
 </kw>
 <suite id="s1-s1" name="Test" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test">
-<suite id="s1-s1-s1" name="Sort1" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test/Sort1">
-<suite id="s1-s1-s1-s1" name="Robottest" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test/Sort1/robottest.robot">
-<test id="s1-s1-s1-s1-t1" name="Verify Successful Login to OrangeHRM" line="13">
+<suite id="s1-s1-s1" name="Initialisation" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test/Initialisation">
+<suite id="s1-s1-s1-s1" name="0001 Initial Page Test" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test/Initialisation/0001_initial_page_test.robot">
+<test id="s1-s1-s1-s1-t1" name="Verify Initial Text of Summary Table Of The Oppenheimer Project" line="13">
+<kw name="Get Number Of Users" library="Helpfunction">
+<var>${number_of_users}</var>
+<msg timestamp="20221104 13:20:09.200" level="INFO">${number_of_users} = 3</msg>
+<status status="PASS" starttime="20221104 13:20:09.192" endtime="20221104 13:20:09.200"/>
+</kw>
+<if>
+<branch type="IF" condition="${number_of_users} == ${0}">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath://*[@id="contents"]/div[1]/div[2]/label</arg>
-<arg>timeout=10</arg>
+<arg>xpath://*[@id="contents"]/h1</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221104 09:53:40.279" endtime="20221104 09:53:40.481"/>
+<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.200"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${init_text}</var>
+<arg>xpath://*[@id="contents"]/h1</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.200"/>
+</kw>
+<kw name="Check Init Text" library="Helpfunction">
+<var>${result}</var>
+<arg>${init_text}</arg>
+<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.200"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.200"/>
+</kw>
+<if>
+<branch type="IF" condition="${result}">
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="contents"]/div[2]/table</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.200"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>PASS</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.200"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.200"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.201" endtime="20221104 13:20:09.201"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 13:20:09.201" endtime="20221104 13:20:09.201"/>
+</branch>
+<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.201"/>
+</if>
+<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.201"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>{"Someone is home"}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221104 13:20:09.201" endtime="20221104 13:20:09.201"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="contents"]/div[2]/table</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221104 13:20:09.217" level="INFO">Current page contains element 'xpath://*[@id="contents"]/div[2]/table'.</msg>
+<status status="PASS" starttime="20221104 13:20:09.201" endtime="20221104 13:20:09.217"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="contents"]/h1</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<msg timestamp="20221104 13:20:09.227" level="INFO">Current page does not contain element 'xpath://*[@id="contents"]/h1'.</msg>
+<status status="PASS" starttime="20221104 13:20:09.217" endtime="20221104 13:20:09.227"/>
 </kw>
 <kw name="Get Element Count" library="SeleniumLibrary">
-<var>${happy}</var>
+<var>${initial_rows}</var>
 <arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr</arg>
 <doc>Returns the number of elements matching ``locator``.</doc>
-<msg timestamp="20221104 09:53:40.494" level="INFO">${happy} = 9</msg>
-<status status="PASS" starttime="20221104 09:53:40.481" endtime="20221104 09:53:40.494"/>
+<msg timestamp="20221104 13:20:09.239" level="INFO">${initial_rows} = 3</msg>
+<status status="PASS" starttime="20221104 13:20:09.227" endtime="20221104 13:20:09.239"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>${happy}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 09:53:40.494" level="INFO">9</msg>
-<status status="PASS" starttime="20221104 09:53:40.494" endtime="20221104 09:53:40.494"/>
+<if>
+<branch type="IF" condition="${initial_rows} != ${number_of_users}">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.239" endtime="20221104 13:20:09.239"/>
 </kw>
-<kw name="Table Column Should Contain" library="SeleniumLibrary">
-<arg>xpath://*[@id="contents"]</arg>
-<arg>1</arg>
-<arg>4444</arg>
-<doc>Verifies table column contains text ``expected``.</doc>
-<status status="PASS" starttime="20221104 09:53:40.494" endtime="20221104 09:53:40.576"/>
+<status status="NOT RUN" starttime="20221104 13:20:09.239" endtime="20221104 13:20:09.239"/>
+</branch>
+<branch type="ELSE">
+<kw name="Pass Execution" library="BuiltIn">
+<arg>Test Passed</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<msg timestamp="20221104 13:20:09.239" level="INFO">Execution passed with message:
+Test Passed</msg>
+<status status="PASS" starttime="20221104 13:20:09.239" endtime="20221104 13:20:09.239"/>
 </kw>
+<status status="PASS" starttime="20221104 13:20:09.239" endtime="20221104 13:20:09.239"/>
+</branch>
+<status status="PASS" starttime="20221104 13:20:09.239" endtime="20221104 13:20:09.239"/>
+</if>
+<status status="PASS" starttime="20221104 13:20:09.201" endtime="20221104 13:20:09.239"/>
+</branch>
+<status status="PASS" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.239"/>
+</if>
+<doc>This test case verifies the initial settings for the table for The Oppenheimer Project</doc>
+<tag>Initial</tag>
+<status status="PASS" starttime="20221104 13:20:09.192" endtime="20221104 13:20:09.239">Test Passed</status>
+</test>
+<test id="s1-s1-s1-s1-t2" name="Verify Initial Text of Summary Relief Text Of The Oppenheimer Project From API Call" line="53">
+<kw name="Get Number Of Users" library="Helpfunction">
+<var>${number_of_users}</var>
+<msg timestamp="20221104 13:20:09.247" level="INFO">${number_of_users} = 3</msg>
+<status status="PASS" starttime="20221104 13:20:09.240" endtime="20221104 13:20:09.247"/>
+</kw>
+<kw name="Curl Get Relief Summary Users" library="Helpfunction">
+<var>${init_relief_statement}</var>
+<msg timestamp="20221104 13:20:09.256" level="INFO">${init_relief_statement} = 3</msg>
+<status status="PASS" starttime="20221104 13:20:09.247" endtime="20221104 13:20:09.256"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${number_of_users}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221104 13:20:09.256" endtime="20221104 13:20:09.256"/>
+</kw>
+<if>
+<branch type="IF" condition="${number_of_users} == ${0}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${init_relief_statement}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
+</kw>
+<kw name="Splittextforpeople" library="Helpfunction">
+<var>${check_against_people}</var>
+<arg>${init_relief_statement}</arg>
+<arg>${0}</arg>
+<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
+</kw>
+<if>
+<branch type="IF" condition="${check_against_people} == ${False}">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
+</branch>
+<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
+</if>
+<kw name="Splittextforcheckprice" library="Helpfunction">
+<var>${check_against_price}</var>
+<arg>${init_relief_statement}</arg>
+<arg>${0}</arg>
+<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
+</kw>
+<if>
+<branch type="IF" condition="${check_against_price}">
+<kw name="Pass Execution" library="BuiltIn">
+<arg>Sub Price Sub Test Passed</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
+</branch>
+<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
+</if>
+<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://*[@id="contents"]/div[3]/div/p</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.273"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${init_relief_statement}</var>
+<arg>xpath://*[@id="contents"]/div[3]/div/p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221104 13:20:09.299" level="INFO">${init_relief_statement} = £656.00 will be dispensed to 3 Working Class Hero/s</msg>
+<status status="PASS" starttime="20221104 13:20:09.273" endtime="20221104 13:20:09.299"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${init_table}</var>
+<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20221104 13:20:09.302" level="INFO">${init_table} = 3</msg>
+<status status="PASS" starttime="20221104 13:20:09.299" endtime="20221104 13:20:09.302"/>
+</kw>
+<kw name="Splittextforpeople" library="Helpfunction">
+<var>${check_against_people}</var>
+<arg>${init_relief_statement}</arg>
+<arg>${init_table}</arg>
+<msg timestamp="20221104 13:20:09.303" level="INFO">${check_against_people} = True</msg>
+<status status="PASS" starttime="20221104 13:20:09.302" endtime="20221104 13:20:09.303"/>
+</kw>
+<if>
+<branch type="IF" condition="${check_against_people} == ${False}">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.303" endtime="20221104 13:20:09.303"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 13:20:09.303" endtime="20221104 13:20:09.303"/>
+</branch>
+<status status="PASS" starttime="20221104 13:20:09.303" endtime="20221104 13:20:09.303"/>
+</if>
 <kw name="Create List" library="BuiltIn">
 <var>@{PriceList}</var>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20221104 09:53:40.576" level="INFO">@{PriceList} = [ ]</msg>
-<status status="PASS" starttime="20221104 09:53:40.576" endtime="20221104 09:53:40.576"/>
+<msg timestamp="20221104 13:20:09.303" level="INFO">@{PriceList} = [ ]</msg>
+<status status="PASS" starttime="20221104 13:20:09.303" endtime="20221104 13:20:09.303"/>
 </kw>
 <for flavor="IN RANGE">
 <var>${index}</var>
 <value>1</value>
-<value>${happy}+1</value>
+<value>${init_table}+1</value>
 <iter>
 <var name="${index}">1</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${var}</var>
 <arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 09:53:40.646" level="INFO">${var} = 95.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.576" endtime="20221104 09:53:40.646"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${var}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 09:53:40.646" level="INFO">95.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.646" endtime="20221104 09:53:40.646"/>
+<msg timestamp="20221104 13:20:09.319" level="INFO">${var} = 95.00</msg>
+<status status="PASS" starttime="20221104 13:20:09.303" endtime="20221104 13:20:09.319"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${PriceList}</arg>
 <arg>${var}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221104 09:53:40.646" endtime="20221104 09:53:40.647"/>
+<status status="PASS" starttime="20221104 13:20:09.319" endtime="20221104 13:20:09.319"/>
 </kw>
-<status status="PASS" starttime="20221104 09:53:40.576" endtime="20221104 09:53:40.647"/>
+<status status="PASS" starttime="20221104 13:20:09.303" endtime="20221104 13:20:09.319"/>
 </iter>
 <iter>
 <var name="${index}">2</var>
@@ -80,22 +261,16 @@
 <var>${var}</var>
 <arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 09:53:40.662" level="INFO">${var} = 511.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.647" endtime="20221104 09:53:40.662"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${var}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 09:53:40.662" level="INFO">511.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.662" endtime="20221104 09:53:40.662"/>
+<msg timestamp="20221104 13:20:09.333" level="INFO">${var} = 511.00</msg>
+<status status="PASS" starttime="20221104 13:20:09.319" endtime="20221104 13:20:09.333"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${PriceList}</arg>
 <arg>${var}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221104 09:53:40.662" endtime="20221104 09:53:40.662"/>
+<status status="PASS" starttime="20221104 13:20:09.333" endtime="20221104 13:20:09.333"/>
 </kw>
-<status status="PASS" starttime="20221104 09:53:40.647" endtime="20221104 09:53:40.662"/>
+<status status="PASS" starttime="20221104 13:20:09.319" endtime="20221104 13:20:09.333"/>
 </iter>
 <iter>
 <var name="${index}">3</var>
@@ -103,458 +278,446 @@
 <var>${var}</var>
 <arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 09:53:40.677" level="INFO">${var} = 50.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.663" endtime="20221104 09:53:40.677"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${var}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 09:53:40.677" level="INFO">50.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.677" endtime="20221104 09:53:40.677"/>
+<msg timestamp="20221104 13:20:09.623" level="INFO">${var} = 50.00</msg>
+<status status="PASS" starttime="20221104 13:20:09.333" endtime="20221104 13:20:09.623"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${PriceList}</arg>
 <arg>${var}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221104 09:53:40.677" endtime="20221104 09:53:40.677"/>
+<status status="PASS" starttime="20221104 13:20:09.623" endtime="20221104 13:20:09.623"/>
 </kw>
-<status status="PASS" starttime="20221104 09:53:40.662" endtime="20221104 09:53:40.677"/>
+<status status="PASS" starttime="20221104 13:20:09.333" endtime="20221104 13:20:09.623"/>
 </iter>
-<iter>
-<var name="${index}">4</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${var}</var>
-<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 09:53:40.691" level="INFO">${var} = 95.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.677" endtime="20221104 09:53:40.691"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${var}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 09:53:40.691" level="INFO">95.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.691" endtime="20221104 09:53:40.691"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${PriceList}</arg>
-<arg>${var}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221104 09:53:40.691" endtime="20221104 09:53:40.691"/>
-</kw>
-<status status="PASS" starttime="20221104 09:53:40.677" endtime="20221104 09:53:40.691"/>
-</iter>
-<iter>
-<var name="${index}">5</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${var}</var>
-<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 09:53:40.705" level="INFO">${var} = 511.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.691" endtime="20221104 09:53:40.705"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${var}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 09:53:40.705" level="INFO">511.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.705" endtime="20221104 09:53:40.705"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${PriceList}</arg>
-<arg>${var}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221104 09:53:40.705" endtime="20221104 09:53:40.705"/>
-</kw>
-<status status="PASS" starttime="20221104 09:53:40.691" endtime="20221104 09:53:40.705"/>
-</iter>
-<iter>
-<var name="${index}">6</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${var}</var>
-<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 09:53:40.718" level="INFO">${var} = 50.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.705" endtime="20221104 09:53:40.719"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${var}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 09:53:40.719" level="INFO">50.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.719" endtime="20221104 09:53:40.719"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${PriceList}</arg>
-<arg>${var}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221104 09:53:40.719" endtime="20221104 09:53:40.719"/>
-</kw>
-<status status="PASS" starttime="20221104 09:53:40.705" endtime="20221104 09:53:40.719"/>
-</iter>
-<iter>
-<var name="${index}">7</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${var}</var>
-<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 09:53:40.732" level="INFO">${var} = 95.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.719" endtime="20221104 09:53:40.732"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${var}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 09:53:40.732" level="INFO">95.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.732" endtime="20221104 09:53:40.732"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${PriceList}</arg>
-<arg>${var}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221104 09:53:40.732" endtime="20221104 09:53:40.732"/>
-</kw>
-<status status="PASS" starttime="20221104 09:53:40.719" endtime="20221104 09:53:40.732"/>
-</iter>
-<iter>
-<var name="${index}">8</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${var}</var>
-<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 09:53:40.746" level="INFO">${var} = 511.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.732" endtime="20221104 09:53:40.746"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${var}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 09:53:40.746" level="INFO">511.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.746" endtime="20221104 09:53:40.746"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${PriceList}</arg>
-<arg>${var}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221104 09:53:40.746" endtime="20221104 09:53:40.746"/>
-</kw>
-<status status="PASS" starttime="20221104 09:53:40.732" endtime="20221104 09:53:40.746"/>
-</iter>
-<iter>
-<var name="${index}">9</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${var}</var>
-<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 09:53:40.759" level="INFO">${var} = 50.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.746" endtime="20221104 09:53:40.759"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${var}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 09:53:40.759" level="INFO">50.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.759" endtime="20221104 09:53:40.759"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${PriceList}</arg>
-<arg>${var}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221104 09:53:40.759" endtime="20221104 09:53:40.759"/>
-</kw>
-<status status="PASS" starttime="20221104 09:53:40.746" endtime="20221104 09:53:40.759"/>
-</iter>
-<status status="PASS" starttime="20221104 09:53:40.576" endtime="20221104 09:53:40.759"/>
+<status status="PASS" starttime="20221104 13:20:09.303" endtime="20221104 13:20:09.623"/>
 </for>
 <kw name="Set Variable" library="BuiltIn">
 <var>${sum_of_price}</var>
 <arg>${0.00}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 09:53:40.760" level="INFO">${sum_of_price} = 0.0</msg>
-<status status="PASS" starttime="20221104 09:53:40.759" endtime="20221104 09:53:40.760"/>
+<msg timestamp="20221104 13:20:09.624" level="INFO">${sum_of_price} = 0.0</msg>
+<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.624"/>
 </kw>
 <for flavor="IN">
 <var>${element}</var>
 <value>@{PriceList}</value>
 <iter>
 <var name="${element}">95.00</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${element}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221104 09:53:40.760" endtime="20221104 09:53:40.760"/>
-</kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${inidcated}</var>
 <arg>${element}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 09:53:40.760" level="INFO">${inidcated} = 95.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.760" endtime="20221104 09:53:40.760"/>
+<msg timestamp="20221104 13:20:09.624" level="INFO">${inidcated} = 95.00</msg>
+<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.624"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${sum_of_price}</var>
 <arg>${sum_of_price}+${inidcated}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221104 09:53:40.760" level="INFO">${sum_of_price} = 95.0</msg>
-<status status="PASS" starttime="20221104 09:53:40.760" endtime="20221104 09:53:40.760"/>
+<msg timestamp="20221104 13:20:09.624" level="INFO">${sum_of_price} = 95.0</msg>
+<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.624"/>
 </kw>
-<status status="PASS" starttime="20221104 09:53:40.760" endtime="20221104 09:53:40.760"/>
+<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.624"/>
 </iter>
 <iter>
 <var name="${element}">511.00</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${element}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221104 09:53:40.760" endtime="20221104 09:53:40.760"/>
-</kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${inidcated}</var>
 <arg>${element}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 09:53:40.760" level="INFO">${inidcated} = 511.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.760" endtime="20221104 09:53:40.760"/>
+<msg timestamp="20221104 13:20:09.624" level="INFO">${inidcated} = 511.00</msg>
+<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.624"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${sum_of_price}</var>
 <arg>${sum_of_price}+${inidcated}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221104 09:53:40.761" level="INFO">${sum_of_price} = 606.0</msg>
-<status status="PASS" starttime="20221104 09:53:40.760" endtime="20221104 09:53:40.761"/>
+<msg timestamp="20221104 13:20:09.625" level="INFO">${sum_of_price} = 606.0</msg>
+<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.625"/>
 </kw>
-<status status="PASS" starttime="20221104 09:53:40.760" endtime="20221104 09:53:40.761"/>
+<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.625"/>
 </iter>
 <iter>
 <var name="${element}">50.00</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${element}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221104 09:53:40.761" endtime="20221104 09:53:40.761"/>
-</kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${inidcated}</var>
 <arg>${element}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 09:53:40.761" level="INFO">${inidcated} = 50.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.761" endtime="20221104 09:53:40.761"/>
+<msg timestamp="20221104 13:20:09.625" level="INFO">${inidcated} = 50.00</msg>
+<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${sum_of_price}</var>
 <arg>${sum_of_price}+${inidcated}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221104 09:53:40.761" level="INFO">${sum_of_price} = 656.0</msg>
-<status status="PASS" starttime="20221104 09:53:40.761" endtime="20221104 09:53:40.761"/>
+<msg timestamp="20221104 13:20:09.625" level="INFO">${sum_of_price} = 656.0</msg>
+<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
 </kw>
-<status status="PASS" starttime="20221104 09:53:40.761" endtime="20221104 09:53:40.761"/>
+<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
 </iter>
-<iter>
-<var name="${element}">95.00</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${element}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221104 09:53:40.761" endtime="20221104 09:53:40.761"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${inidcated}</var>
-<arg>${element}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 09:53:40.761" level="INFO">${inidcated} = 95.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.761" endtime="20221104 09:53:40.761"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sum_of_price}</var>
-<arg>${sum_of_price}+${inidcated}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221104 09:53:40.761" level="INFO">${sum_of_price} = 751.0</msg>
-<status status="PASS" starttime="20221104 09:53:40.761" endtime="20221104 09:53:40.761"/>
-</kw>
-<status status="PASS" starttime="20221104 09:53:40.761" endtime="20221104 09:53:40.761"/>
-</iter>
-<iter>
-<var name="${element}">511.00</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${element}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221104 09:53:40.761" endtime="20221104 09:53:40.762"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${inidcated}</var>
-<arg>${element}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 09:53:40.762" level="INFO">${inidcated} = 511.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.762" endtime="20221104 09:53:40.762"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sum_of_price}</var>
-<arg>${sum_of_price}+${inidcated}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221104 09:53:40.762" level="INFO">${sum_of_price} = 1262.0</msg>
-<status status="PASS" starttime="20221104 09:53:40.762" endtime="20221104 09:53:40.762"/>
-</kw>
-<status status="PASS" starttime="20221104 09:53:40.761" endtime="20221104 09:53:40.762"/>
-</iter>
-<iter>
-<var name="${element}">50.00</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${element}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221104 09:53:40.762" endtime="20221104 09:53:40.762"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${inidcated}</var>
-<arg>${element}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 09:53:40.762" level="INFO">${inidcated} = 50.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.762" endtime="20221104 09:53:40.762"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sum_of_price}</var>
-<arg>${sum_of_price}+${inidcated}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221104 09:53:40.762" level="INFO">${sum_of_price} = 1312.0</msg>
-<status status="PASS" starttime="20221104 09:53:40.762" endtime="20221104 09:53:40.762"/>
-</kw>
-<status status="PASS" starttime="20221104 09:53:40.762" endtime="20221104 09:53:40.762"/>
-</iter>
-<iter>
-<var name="${element}">95.00</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${element}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221104 09:53:40.762" endtime="20221104 09:53:40.762"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${inidcated}</var>
-<arg>${element}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 09:53:40.762" level="INFO">${inidcated} = 95.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.762" endtime="20221104 09:53:40.762"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sum_of_price}</var>
-<arg>${sum_of_price}+${inidcated}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221104 09:53:40.762" level="INFO">${sum_of_price} = 1407.0</msg>
-<status status="PASS" starttime="20221104 09:53:40.762" endtime="20221104 09:53:40.762"/>
-</kw>
-<status status="PASS" starttime="20221104 09:53:40.762" endtime="20221104 09:53:40.762"/>
-</iter>
-<iter>
-<var name="${element}">511.00</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${element}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221104 09:53:40.763" endtime="20221104 09:53:40.763"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${inidcated}</var>
-<arg>${element}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 09:53:40.763" level="INFO">${inidcated} = 511.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.763" endtime="20221104 09:53:40.763"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sum_of_price}</var>
-<arg>${sum_of_price}+${inidcated}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221104 09:53:40.763" level="INFO">${sum_of_price} = 1918.0</msg>
-<status status="PASS" starttime="20221104 09:53:40.763" endtime="20221104 09:53:40.763"/>
-</kw>
-<status status="PASS" starttime="20221104 09:53:40.763" endtime="20221104 09:53:40.763"/>
-</iter>
-<iter>
-<var name="${element}">50.00</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${element}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221104 09:53:40.763" endtime="20221104 09:53:40.763"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${inidcated}</var>
-<arg>${element}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 09:53:40.763" level="INFO">${inidcated} = 50.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.763" endtime="20221104 09:53:40.763"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sum_of_price}</var>
-<arg>${sum_of_price}+${inidcated}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221104 09:53:40.763" level="INFO">${sum_of_price} = 1968.0</msg>
-<status status="PASS" starttime="20221104 09:53:40.763" endtime="20221104 09:53:40.763"/>
-</kw>
-<status status="PASS" starttime="20221104 09:53:40.763" endtime="20221104 09:53:40.763"/>
-</iter>
-<status status="PASS" starttime="20221104 09:53:40.760" endtime="20221104 09:53:40.763"/>
+<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.625"/>
 </for>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${sum_of_price}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221104 09:53:40.763" endtime="20221104 09:53:40.763"/>
-</kw>
 <kw name="Round To 2 Dp" library="Helpfunction">
 <var>${test_round}</var>
 <arg>${sum_of_price}</arg>
-<msg timestamp="20221104 09:53:40.763" level="INFO">${test_round} = 1968.00</msg>
-<status status="PASS" starttime="20221104 09:53:40.763" endtime="20221104 09:53:40.763"/>
+<msg timestamp="20221104 13:20:09.625" level="INFO">${test_round} = 656.00</msg>
+<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
+<kw name="Splittextforcheckprice" library="Helpfunction">
+<var>${check_against_price}</var>
+<arg>${init_relief_statement}</arg>
 <arg>${test_round}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221104 09:53:40.764" endtime="20221104 09:53:40.764"/>
+<msg timestamp="20221104 13:20:09.625" level="INFO">${check_against_price} = True</msg>
+<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
+</kw>
+<if>
+<branch type="IF" condition="${check_against_price}">
+<kw name="Pass Execution" library="BuiltIn">
+<arg>Sub Price Sub Test Passed</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<msg timestamp="20221104 13:20:09.625" level="INFO">Execution passed with message:
+Sub Price Sub Test Passed</msg>
+<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
+</kw>
+<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
+</branch>
+<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
+</if>
+<status status="PASS" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.625"/>
+</branch>
+<status status="PASS" starttime="20221104 13:20:09.256" endtime="20221104 13:20:09.625"/>
+</if>
+<doc>This test case verifies the initial relief summary text for The Oppenheimer Project</doc>
+<tag>Initial</tag>
+<status status="PASS" starttime="20221104 13:20:09.239" endtime="20221104 13:20:09.626">Sub Price Sub Test Passed</status>
+</test>
+<test id="s1-s1-s1-s1-t3" name="Verify Initial Text of Summary Relief Text Of The Oppenheimer Project From Front End" line="124">
+<kw name="Get Number Of Users" library="Helpfunction">
+<var>${number_of_users}</var>
+<msg timestamp="20221104 13:20:09.633" level="INFO">${number_of_users} = 3</msg>
+<status status="PASS" starttime="20221104 13:20:09.626" endtime="20221104 13:20:09.633"/>
+</kw>
+<if>
+<branch type="IF" condition="${number_of_users} == ${0}">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://*[@id="contents"]/div[2]/div/p</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
-<var>${testText}</var>
+<var>${init_relief_statement}</var>
+<arg>xpath://*[@id="contents"]/div[2]/div/p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${init_relief_statement}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+</kw>
+<kw name="Splittextforpeople" library="Helpfunction">
+<var>${check_against_people}</var>
+<arg>${init_relief_statement}</arg>
+<arg>${0}</arg>
+<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+</kw>
+<if>
+<branch type="IF" condition="${check_against_people} == ${False}">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+</branch>
+<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+</if>
+<kw name="Splittextforcheckprice" library="Helpfunction">
+<var>${check_against_price}</var>
+<arg>${init_relief_statement}</arg>
+<arg>${0}</arg>
+<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+</kw>
+<if>
+<branch type="IF" condition="${check_against_price}">
+<kw name="Pass Execution" library="BuiltIn">
+<arg>Sub Price Sub Test Passed</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+</branch>
+<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+</if>
+<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://*[@id="contents"]/div[3]/div/p</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221104 13:20:09.634" endtime="20221104 13:20:10.339"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${init_relief_statement}</var>
 <arg>xpath://*[@id="contents"]/div[3]/div/p</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 09:53:40.778" level="INFO">${testText} = £1968.00 will be dispensed to 9 Working Class Hero/s</msg>
-<status status="PASS" starttime="20221104 09:53:40.764" endtime="20221104 09:53:40.778"/>
+<msg timestamp="20221104 13:20:10.351" level="INFO">${init_relief_statement} = £656.00 will be dispensed to 3 Working Class Hero/s</msg>
+<status status="PASS" starttime="20221104 13:20:10.339" endtime="20221104 13:20:10.351"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${testText}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221104 09:53:40.778" endtime="20221104 09:53:40.778"/>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${init_table}</var>
+<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20221104 13:20:10.355" level="INFO">${init_table} = 3</msg>
+<status status="PASS" starttime="20221104 13:20:10.351" endtime="20221104 13:20:10.355"/>
 </kw>
-<kw name="Splittext" library="Helpfunction">
-<var>${larry_king}</var>
-<arg>${testText}</arg>
+<kw name="Splittextforpeople" library="Helpfunction">
+<var>${check_against_people}</var>
+<arg>${init_relief_statement}</arg>
+<arg>${init_table}</arg>
+<msg timestamp="20221104 13:20:10.355" level="INFO">${check_against_people} = True</msg>
+<status status="PASS" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.355"/>
+</kw>
+<if>
+<branch type="IF" condition="${check_against_people} == ${False}">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.355"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.355"/>
+</branch>
+<status status="PASS" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.355"/>
+</if>
+<kw name="Create List" library="BuiltIn">
+<var>@{PriceList}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20221104 13:20:10.355" level="INFO">@{PriceList} = [ ]</msg>
+<status status="PASS" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.355"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>1</value>
+<value>${init_table}+1</value>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${var}</var>
+<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221104 13:20:10.373" level="INFO">${var} = 95.00</msg>
+<status status="PASS" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.373"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${PriceList}</arg>
+<arg>${var}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221104 13:20:10.373" endtime="20221104 13:20:10.373"/>
+</kw>
+<status status="PASS" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.373"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${var}</var>
+<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221104 13:20:10.381" level="INFO">${var} = 511.00</msg>
+<status status="PASS" starttime="20221104 13:20:10.373" endtime="20221104 13:20:10.381"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${PriceList}</arg>
+<arg>${var}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221104 13:20:10.381" endtime="20221104 13:20:10.381"/>
+</kw>
+<status status="PASS" starttime="20221104 13:20:10.373" endtime="20221104 13:20:10.381"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${var}</var>
+<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221104 13:20:10.389" level="INFO">${var} = 50.00</msg>
+<status status="PASS" starttime="20221104 13:20:10.381" endtime="20221104 13:20:10.389"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${PriceList}</arg>
+<arg>${var}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221104 13:20:10.389" endtime="20221104 13:20:10.389"/>
+</kw>
+<status status="PASS" starttime="20221104 13:20:10.381" endtime="20221104 13:20:10.389"/>
+</iter>
+<status status="PASS" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.389"/>
+</for>
+<kw name="Set Variable" library="BuiltIn">
+<var>${sum_of_price}</var>
+<arg>${0.00}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221104 13:20:10.389" level="INFO">${sum_of_price} = 0.0</msg>
+<status status="PASS" starttime="20221104 13:20:10.389" endtime="20221104 13:20:10.389"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{PriceList}</value>
+<iter>
+<var name="${element}">95.00</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${inidcated}</var>
+<arg>${element}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221104 13:20:10.390" level="INFO">${inidcated} = 95.00</msg>
+<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${sum_of_price}</var>
+<arg>${sum_of_price}+${inidcated}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221104 13:20:10.390" level="INFO">${sum_of_price} = 95.0</msg>
+<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
+</kw>
+<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
+</iter>
+<iter>
+<var name="${element}">511.00</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${inidcated}</var>
+<arg>${element}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221104 13:20:10.390" level="INFO">${inidcated} = 511.00</msg>
+<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${sum_of_price}</var>
+<arg>${sum_of_price}+${inidcated}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221104 13:20:10.390" level="INFO">${sum_of_price} = 606.0</msg>
+<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
+</kw>
+<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
+</iter>
+<iter>
+<var name="${element}">50.00</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${inidcated}</var>
+<arg>${element}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221104 13:20:10.390" level="INFO">${inidcated} = 50.00</msg>
+<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${sum_of_price}</var>
+<arg>${sum_of_price}+${inidcated}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221104 13:20:10.390" level="INFO">${sum_of_price} = 656.0</msg>
+<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
+</kw>
+<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
+</iter>
+<status status="PASS" starttime="20221104 13:20:10.389" endtime="20221104 13:20:10.390"/>
+</for>
+<kw name="Round To 2 Dp" library="Helpfunction">
+<var>${test_round}</var>
 <arg>${sum_of_price}</arg>
-<msg timestamp="20221104 09:53:40.778" level="INFO">1968.0</msg>
-<msg timestamp="20221104 09:53:40.778" level="INFO">${larry_king} = TRUE</msg>
-<status status="PASS" starttime="20221104 09:53:40.778" endtime="20221104 09:53:40.778"/>
+<msg timestamp="20221104 13:20:10.391" level="INFO">${test_round} = 656.00</msg>
+<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.391"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${larry_king}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221104 09:53:40.778" endtime="20221104 09:53:40.779"/>
+<kw name="Splittextforcheckprice" library="Helpfunction">
+<var>${check_against_price}</var>
+<arg>${init_relief_statement}</arg>
+<arg>${test_round}</arg>
+<msg timestamp="20221104 13:20:10.391" level="INFO">${check_against_price} = True</msg>
+<status status="PASS" starttime="20221104 13:20:10.391" endtime="20221104 13:20:10.391"/>
 </kw>
-<doc>This test case verifies that user is able to successfully Login to OrangeHRM</doc>
-<tag>Smoke</tag>
-<status status="PASS" starttime="20221104 09:53:40.278" endtime="20221104 09:53:40.779"/>
+<if>
+<branch type="IF" condition="${check_against_price}">
+<kw name="Pass Execution" library="BuiltIn">
+<arg>Sub Price Sub Test Passed</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<msg timestamp="20221104 13:20:10.391" level="INFO">Execution passed with message:
+Sub Price Sub Test Passed</msg>
+<status status="PASS" starttime="20221104 13:20:10.391" endtime="20221104 13:20:10.391"/>
+</kw>
+<status status="PASS" starttime="20221104 13:20:10.391" endtime="20221104 13:20:10.391"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 13:20:10.391" endtime="20221104 13:20:10.391"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 13:20:10.391" endtime="20221104 13:20:10.391"/>
+</branch>
+<status status="PASS" starttime="20221104 13:20:10.391" endtime="20221104 13:20:10.391"/>
+</if>
+<status status="PASS" starttime="20221104 13:20:09.634" endtime="20221104 13:20:10.391"/>
+</branch>
+<status status="PASS" starttime="20221104 13:20:09.633" endtime="20221104 13:20:10.391"/>
+</if>
+<doc>This test case verifies the initial relief summary text for The Oppenheimer Project</doc>
+<tag>Initial</tag>
+<status status="PASS" starttime="20221104 13:20:09.626" endtime="20221104 13:20:10.391">Sub Price Sub Test Passed</status>
 </test>
-<test id="s1-s1-s1-s1-t2" name="Verify MyBeautiful Function Is Working" line="80">
+<doc>Login Functionality</doc>
+<status status="PASS" starttime="20221104 13:20:09.174" endtime="20221104 13:20:10.391"/>
+</suite>
+<suite id="s1-s1-s1-s2" name="Robottest Copy" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test/Initialisation/robottest copy.robot">
+<test id="s1-s1-s1-s2-t1" name="Verify Successful Login to OrangeHRM" line="13">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${happy}</var>
+<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20221104 13:20:10.398" level="INFO">${happy} = 3</msg>
+<status status="PASS" starttime="20221104 13:20:10.394" endtime="20221104 13:20:10.398"/>
+</kw>
+<doc>This test case verifies the initial settings for The Oppenheimer Project</doc>
+<tag>Initial</tag>
+<status status="PASS" starttime="20221104 13:20:10.393" endtime="20221104 13:20:10.398"/>
+</test>
+<test id="s1-s1-s1-s2-t2" name="Verify MyBeautiful Function Is Working" line="71">
 <kw name="Add One To Integer" library="Functest">
 <var>${value}</var>
 <arg>${4}</arg>
-<msg timestamp="20221104 09:53:40.779" level="INFO">${value} = 5</msg>
-<status status="PASS" starttime="20221104 09:53:40.779" endtime="20221104 09:53:40.779"/>
+<msg timestamp="20221104 13:20:10.399" level="INFO">${value} = 5</msg>
+<status status="PASS" starttime="20221104 13:20:10.399" endtime="20221104 13:20:10.399"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Hi</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 09:53:40.779" level="INFO">Hi</msg>
-<status status="PASS" starttime="20221104 09:53:40.779" endtime="20221104 09:53:40.779"/>
+<msg timestamp="20221104 13:20:10.399" level="INFO">Hi</msg>
+<status status="PASS" starttime="20221104 13:20:10.399" endtime="20221104 13:20:10.399"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${value}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 09:53:40.780" level="INFO">5</msg>
-<status status="PASS" starttime="20221104 09:53:40.779" endtime="20221104 09:53:40.780"/>
+<msg timestamp="20221104 13:20:10.399" level="INFO">5</msg>
+<status status="PASS" starttime="20221104 13:20:10.399" endtime="20221104 13:20:10.399"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${value}</arg>
 <arg>${5}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20221104 09:53:40.780" endtime="20221104 09:53:40.780"/>
+<status status="PASS" starttime="20221104 13:20:10.399" endtime="20221104 13:20:10.399"/>
 </kw>
-<status status="PASS" starttime="20221104 09:53:40.779" endtime="20221104 09:53:40.780"/>
+<status status="PASS" starttime="20221104 13:20:10.398" endtime="20221104 13:20:10.399"/>
 </test>
 <doc>Login Functionality</doc>
-<status status="PASS" starttime="20221104 09:53:40.273" endtime="20221104 09:53:40.780"/>
+<status status="PASS" starttime="20221104 13:20:10.392" endtime="20221104 13:20:10.400"/>
 </suite>
-<status status="PASS" starttime="20221104 09:53:40.273" endtime="20221104 09:53:40.780"/>
+<status status="PASS" starttime="20221104 13:20:09.173" endtime="20221104 13:20:10.400"/>
 </suite>
 <suite id="s1-s1-s2" name="Sort2" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test/Sort2">
 <suite id="s1-s1-s2-s1" name="Robottest2" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test/Sort2/robottest2.robot">
@@ -562,54 +725,55 @@
 <kw name="Add One To Integer" library="Functest">
 <var>${value}</var>
 <arg>${5}</arg>
-<msg timestamp="20221104 09:53:40.783" level="INFO">${value} = 6</msg>
-<status status="PASS" starttime="20221104 09:53:40.783" endtime="20221104 09:53:40.783"/>
+<msg timestamp="20221104 13:20:10.402" level="INFO">${value} = 6</msg>
+<status status="PASS" starttime="20221104 13:20:10.402" endtime="20221104 13:20:10.402"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Hi</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 09:53:40.783" level="INFO">Hi</msg>
-<status status="PASS" starttime="20221104 09:53:40.783" endtime="20221104 09:53:40.783"/>
+<msg timestamp="20221104 13:20:10.403" level="INFO">Hi</msg>
+<status status="PASS" starttime="20221104 13:20:10.402" endtime="20221104 13:20:10.403"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${value}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 09:53:40.783" level="INFO">6</msg>
-<status status="PASS" starttime="20221104 09:53:40.783" endtime="20221104 09:53:40.783"/>
+<msg timestamp="20221104 13:20:10.403" level="INFO">6</msg>
+<status status="PASS" starttime="20221104 13:20:10.403" endtime="20221104 13:20:10.403"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${value}</arg>
 <arg>${6}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20221104 09:53:40.783" endtime="20221104 09:53:40.783"/>
+<status status="PASS" starttime="20221104 13:20:10.403" endtime="20221104 13:20:10.403"/>
 </kw>
-<status status="PASS" starttime="20221104 09:53:40.782" endtime="20221104 09:53:40.783"/>
+<status status="PASS" starttime="20221104 13:20:10.402" endtime="20221104 13:20:10.403"/>
 </test>
 <doc>Login Functionality</doc>
-<status status="PASS" starttime="20221104 09:53:40.781" endtime="20221104 09:53:40.783"/>
+<status status="PASS" starttime="20221104 13:20:10.401" endtime="20221104 13:20:10.403"/>
 </suite>
-<status status="PASS" starttime="20221104 09:53:40.781" endtime="20221104 09:53:40.784"/>
+<status status="PASS" starttime="20221104 13:20:10.400" endtime="20221104 13:20:10.403"/>
 </suite>
-<status status="PASS" starttime="20221104 09:53:40.271" endtime="20221104 09:53:40.784"/>
+<status status="PASS" starttime="20221104 13:20:09.172" endtime="20221104 13:20:10.404"/>
 </suite>
 <kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20221104 09:53:40.784" endtime="20221104 09:53:40.898"/>
+<status status="PASS" starttime="20221104 13:20:10.404" endtime="20221104 13:20:10.467"/>
 </kw>
-<status status="PASS" starttime="20221104 09:53:26.283" endtime="20221104 09:53:40.898"/>
+<status status="PASS" starttime="20221104 13:19:57.090" endtime="20221104 13:20:10.467"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Smoke</stat>
+<stat pass="4" fail="0" skip="0">Initial</stat>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="Kenneth Robot Assignment">Kenneth Robot Assignment</stat>
-<stat pass="3" fail="0" skip="0" id="s1-s1" name="Test">Kenneth Robot Assignment.Test</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="Sort1">Kenneth Robot Assignment.Test.Sort1</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1-s1-s1" name="Robottest">Kenneth Robot Assignment.Test.Sort1.Robottest</stat>
+<stat pass="6" fail="0" skip="0" id="s1" name="Kenneth Robot Assignment">Kenneth Robot Assignment</stat>
+<stat pass="6" fail="0" skip="0" id="s1-s1" name="Test">Kenneth Robot Assignment.Test</stat>
+<stat pass="5" fail="0" skip="0" id="s1-s1-s1" name="Initialisation">Kenneth Robot Assignment.Test.Initialisation</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1-s1-s1" name="0001 Initial Page Test">Kenneth Robot Assignment.Test.Initialisation.0001 Initial Page Test</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1-s2" name="Robottest Copy">Kenneth Robot Assignment.Test.Initialisation.Robottest Copy</stat>
 <stat pass="1" fail="0" skip="0" id="s1-s1-s2" name="Sort2">Kenneth Robot Assignment.Test.Sort2</stat>
 <stat pass="1" fail="0" skip="0" id="s1-s1-s2-s1" name="Robottest2">Kenneth Robot Assignment.Test.Sort2.Robottest2</stat>
 </suite>
