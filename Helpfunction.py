@@ -23,7 +23,9 @@ def working_directory(item):
     return os.getcwd()+item
 
 def round_to_2_dp(price):
-
+    if price == 0:
+        return price 
+    
     return format(price, '.2f')
 
 def splittextforcheckprice(sentence, tax_relief):
@@ -41,7 +43,7 @@ def get_number_of_users():
 
     return len(users)
 
-def get_total_reflief():
+def get_total_relief():
     prices = curl_get_user()
     list =[]
     for i in prices:

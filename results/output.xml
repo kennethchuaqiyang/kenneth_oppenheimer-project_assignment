@@ -1,723 +1,910 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0 (Python 3.10.8 on darwin)" generated="20221104 13:19:57.089" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0 (Python 3.10.8 on darwin)" generated="20221104 23:14:39.029" rpa="false" schemaversion="3">
 <suite id="s1" name="Kenneth Robot Assignment" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment">
 <kw name="Open Website The Oppenheimer Project" library="resources" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>http://localhost:8080/</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221104 13:19:57.169" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
-<status status="PASS" starttime="20221104 13:19:57.169" endtime="20221104 13:20:08.972"/>
+<msg timestamp="20221104 23:14:39.147" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20221104 23:14:39.147" endtime="20221104 23:14:50.013"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[@id="contents-main"]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221104 13:20:08.972" endtime="20221104 13:20:09.172"/>
+<status status="PASS" starttime="20221104 23:14:50.013" endtime="20221104 23:14:50.204"/>
 </kw>
-<status status="PASS" starttime="20221104 13:19:57.168" endtime="20221104 13:20:09.172"/>
+<status status="PASS" starttime="20221104 23:14:39.147" endtime="20221104 23:14:50.204"/>
 </kw>
 <suite id="s1-s1" name="Test" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test">
 <suite id="s1-s1-s1" name="Initialisation" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test/Initialisation">
-<suite id="s1-s1-s1-s1" name="0001 Initial Page Test" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test/Initialisation/0001_initial_page_test.robot">
-<test id="s1-s1-s1-s1-t1" name="Verify Initial Text of Summary Table Of The Oppenheimer Project" line="13">
+<suite id="s1-s1-s1-s1" name="0001 Initial Page Before Clerk Entry Test" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test/Initialisation/0001_initial_page_before_clerk_entry_test.robot">
+<test id="s1-s1-s1-s1-t1" name="Verify Initial Text of Summary Table Of The Oppenheimer Project" line="16">
+<kw name="Get Number Of Heroes" library="resources">
 <kw name="Get Number Of Users" library="Helpfunction">
 <var>${number_of_users}</var>
-<msg timestamp="20221104 13:20:09.200" level="INFO">${number_of_users} = 3</msg>
-<status status="PASS" starttime="20221104 13:20:09.192" endtime="20221104 13:20:09.200"/>
+<msg timestamp="20221104 23:14:50.222" level="INFO">${number_of_users} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.210" endtime="20221104 23:14:50.222"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${number_of_users}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.223" level="INFO">${number_of_users} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.223" endtime="20221104 23:14:50.223"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.210" endtime="20221104 23:14:50.223"/>
 </kw>
 <if>
 <branch type="IF" condition="${number_of_users} == ${0}">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[@id="contents"]/h1</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.200"/>
+<status status="PASS" starttime="20221104 23:14:50.223" endtime="20221104 23:14:50.238"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${init_text}</var>
 <arg>xpath://*[@id="contents"]/h1</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.200"/>
+<msg timestamp="20221104 23:14:50.263" level="INFO">${init_text} = No records at the moment 😢</msg>
+<status status="PASS" starttime="20221104 23:14:50.238" endtime="20221104 23:14:50.263"/>
 </kw>
 <kw name="Check Init Text" library="Helpfunction">
 <var>${result}</var>
 <arg>${init_text}</arg>
-<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.200"/>
+<msg timestamp="20221104 23:14:50.263" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20221104 23:14:50.263" endtime="20221104 23:14:50.263"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${result}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.200"/>
+<status status="PASS" starttime="20221104 23:14:50.263" endtime="20221104 23:14:50.263"/>
 </kw>
 <if>
 <branch type="IF" condition="${result}">
 <kw name="Page Should Not Contain Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="contents"]/div[2]/table</arg>
 <doc>Verifies that element ``locator`` is not found on the current page.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.200"/>
+<msg timestamp="20221104 23:14:50.276" level="INFO">Current page does not contain element 'xpath://*[@id="contents"]/div[2]/table'.</msg>
+<status status="PASS" starttime="20221104 23:14:50.263" endtime="20221104 23:14:50.276"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>PASS</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.200"/>
+<status status="PASS" starttime="20221104 23:14:50.276" endtime="20221104 23:14:50.276"/>
 </kw>
-<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.200"/>
+<status status="PASS" starttime="20221104 23:14:50.263" endtime="20221104 23:14:50.276"/>
 </branch>
 <branch type="ELSE">
 <kw name="Fail" library="BuiltIn">
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.201" endtime="20221104 13:20:09.201"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.276" endtime="20221104 23:14:50.276"/>
 </kw>
-<status status="NOT RUN" starttime="20221104 13:20:09.201" endtime="20221104 13:20:09.201"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.276" endtime="20221104 23:14:50.276"/>
 </branch>
-<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.201"/>
+<status status="PASS" starttime="20221104 23:14:50.263" endtime="20221104 23:14:50.276"/>
 </if>
-<status status="NOT RUN" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.201"/>
+<status status="PASS" starttime="20221104 23:14:50.223" endtime="20221104 23:14:50.276"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" library="BuiltIn">
 <arg>{"Someone is home"}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221104 13:20:09.201" endtime="20221104 13:20:09.201"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.277" endtime="20221104 23:14:50.277"/>
 </kw>
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="contents"]/div[2]/table</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20221104 13:20:09.217" level="INFO">Current page contains element 'xpath://*[@id="contents"]/div[2]/table'.</msg>
-<status status="PASS" starttime="20221104 13:20:09.201" endtime="20221104 13:20:09.217"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.277" endtime="20221104 23:14:50.277"/>
 </kw>
 <kw name="Page Should Not Contain Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="contents"]/h1</arg>
 <doc>Verifies that element ``locator`` is not found on the current page.</doc>
-<msg timestamp="20221104 13:20:09.227" level="INFO">Current page does not contain element 'xpath://*[@id="contents"]/h1'.</msg>
-<status status="PASS" starttime="20221104 13:20:09.217" endtime="20221104 13:20:09.227"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.277" endtime="20221104 23:14:50.277"/>
 </kw>
-<kw name="Get Element Count" library="SeleniumLibrary">
-<var>${initial_rows}</var>
-<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr</arg>
-<doc>Returns the number of elements matching ``locator``.</doc>
-<msg timestamp="20221104 13:20:09.239" level="INFO">${initial_rows} = 3</msg>
-<status status="PASS" starttime="20221104 13:20:09.227" endtime="20221104 13:20:09.239"/>
+<kw name="Count Rows In Table" library="resources">
+<status status="NOT RUN" starttime="20221104 23:14:50.277" endtime="20221104 23:14:50.277"/>
 </kw>
 <if>
 <branch type="IF" condition="${initial_rows} != ${number_of_users}">
 <kw name="Fail" library="BuiltIn">
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.239" endtime="20221104 13:20:09.239"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.277" endtime="20221104 23:14:50.277"/>
 </kw>
-<status status="NOT RUN" starttime="20221104 13:20:09.239" endtime="20221104 13:20:09.239"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.277" endtime="20221104 23:14:50.277"/>
 </branch>
 <branch type="ELSE">
 <kw name="Pass Execution" library="BuiltIn">
 <arg>Test Passed</arg>
 <doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
-<msg timestamp="20221104 13:20:09.239" level="INFO">Execution passed with message:
-Test Passed</msg>
-<status status="PASS" starttime="20221104 13:20:09.239" endtime="20221104 13:20:09.239"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.277" endtime="20221104 23:14:50.277"/>
 </kw>
-<status status="PASS" starttime="20221104 13:20:09.239" endtime="20221104 13:20:09.239"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.277" endtime="20221104 23:14:50.277"/>
 </branch>
-<status status="PASS" starttime="20221104 13:20:09.239" endtime="20221104 13:20:09.239"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.277" endtime="20221104 23:14:50.277"/>
 </if>
-<status status="PASS" starttime="20221104 13:20:09.201" endtime="20221104 13:20:09.239"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.277" endtime="20221104 23:14:50.277"/>
 </branch>
-<status status="PASS" starttime="20221104 13:20:09.200" endtime="20221104 13:20:09.239"/>
+<status status="PASS" starttime="20221104 23:14:50.223" endtime="20221104 23:14:50.277"/>
 </if>
 <doc>This test case verifies the initial settings for the table for The Oppenheimer Project</doc>
 <tag>Initial</tag>
-<status status="PASS" starttime="20221104 13:20:09.192" endtime="20221104 13:20:09.239">Test Passed</status>
+<status status="PASS" starttime="20221104 23:14:50.210" endtime="20221104 23:14:50.277"/>
 </test>
-<test id="s1-s1-s1-s1-t2" name="Verify Initial Text of Summary Relief Text Of The Oppenheimer Project From API Call" line="53">
+<test id="s1-s1-s1-s1-t2" name="Verify Initial Text of Summary Relief Text Of The Oppenheimer Project Corresponds To Data From API Call" line="55">
+<kw name="Get Number Of Heroes" library="resources">
 <kw name="Get Number Of Users" library="Helpfunction">
 <var>${number_of_users}</var>
-<msg timestamp="20221104 13:20:09.247" level="INFO">${number_of_users} = 3</msg>
-<status status="PASS" starttime="20221104 13:20:09.240" endtime="20221104 13:20:09.247"/>
+<msg timestamp="20221104 23:14:50.289" level="INFO">${number_of_users} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.277" endtime="20221104 23:14:50.289"/>
 </kw>
-<kw name="Curl Get Relief Summary Users" library="Helpfunction">
-<var>${init_relief_statement}</var>
-<msg timestamp="20221104 13:20:09.256" level="INFO">${init_relief_statement} = 3</msg>
-<status status="PASS" starttime="20221104 13:20:09.247" endtime="20221104 13:20:09.256"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
+<kw name="Set Global Variable" library="BuiltIn">
 <arg>${number_of_users}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221104 13:20:09.256" endtime="20221104 13:20:09.256"/>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.289" level="INFO">${number_of_users} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.289" endtime="20221104 23:14:50.289"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.277" endtime="20221104 23:14:50.289"/>
+</kw>
+<kw name="Get Financial Summary For Number Of Heroes From Api" library="resources">
+<kw name="Curl Get Relief Summary Users" library="Helpfunction">
+<var>${api_relief_summary_heroes}</var>
+<msg timestamp="20221104 23:14:50.297" level="INFO">${api_relief_summary_heroes} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.289" endtime="20221104 23:14:50.297"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${api_relief_summary_heroes}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.298" level="INFO">${api_relief_summary_heroes} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.297" endtime="20221104 23:14:50.298"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.289" endtime="20221104 23:14:50.298"/>
+</kw>
+<kw name="Get Financial Summary For Total Relief From Api" library="resources">
+<kw name="Curl Get Relief Summary Relief" library="Helpfunction">
+<var>${api_relief_summary_total_relief}</var>
+<msg timestamp="20221104 23:14:50.304" level="INFO">${api_relief_summary_total_relief} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.298" endtime="20221104 23:14:50.304"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${api_relief_summary_total_relief}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.304" level="INFO">${api_relief_summary_total_relief} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.304" endtime="20221104 23:14:50.304"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.298" endtime="20221104 23:14:50.304"/>
 </kw>
 <if>
 <branch type="IF" condition="${number_of_users} == ${0}">
-<kw name="Log To Console" library="BuiltIn">
-<arg>${init_relief_statement}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
-</kw>
-<kw name="Splittextforpeople" library="Helpfunction">
-<var>${check_against_people}</var>
-<arg>${init_relief_statement}</arg>
-<arg>${0}</arg>
-<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
-</kw>
-<if>
-<branch type="IF" condition="${check_against_people} == ${False}">
-<kw name="Fail" library="BuiltIn">
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
-</kw>
-<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
-</branch>
-<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
-</if>
-<kw name="Splittextforcheckprice" library="Helpfunction">
-<var>${check_against_price}</var>
-<arg>${init_relief_statement}</arg>
-<arg>${0}</arg>
-<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
-</kw>
-<if>
-<branch type="IF" condition="${check_against_price}">
-<kw name="Pass Execution" library="BuiltIn">
-<arg>Sub Price Sub Test Passed</arg>
-<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
-</kw>
-<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
-</branch>
-<branch type="ELSE">
-<kw name="Fail" library="BuiltIn">
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
-</kw>
-<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
-</branch>
-<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
-</if>
-<status status="NOT RUN" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.257"/>
-</branch>
-<branch type="ELSE">
+<kw name="Get Initial Financial Relief Summary Statement" library="resources">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath://*[@id="contents"]/div[3]/div/p</arg>
+<arg>xpath://*[@id="contents"]/div[2]/div/p</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.273"/>
+<status status="PASS" starttime="20221104 23:14:50.305" endtime="20221104 23:14:50.326"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
-<var>${init_relief_statement}</var>
-<arg>xpath://*[@id="contents"]/div[3]/div/p</arg>
+<var>${relief_statement}</var>
+<arg>xpath://*[@id="contents"]/div[2]/div/p</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 13:20:09.299" level="INFO">${init_relief_statement} = £656.00 will be dispensed to 3 Working Class Hero/s</msg>
-<status status="PASS" starttime="20221104 13:20:09.273" endtime="20221104 13:20:09.299"/>
+<msg timestamp="20221104 23:14:50.339" level="INFO">${relief_statement} = £0 will be dispensed to 0 Working Class Hero/s</msg>
+<status status="PASS" starttime="20221104 23:14:50.326" endtime="20221104 23:14:50.340"/>
 </kw>
-<kw name="Get Element Count" library="SeleniumLibrary">
-<var>${init_table}</var>
-<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr</arg>
-<doc>Returns the number of elements matching ``locator``.</doc>
-<msg timestamp="20221104 13:20:09.302" level="INFO">${init_table} = 3</msg>
-<status status="PASS" starttime="20221104 13:20:09.299" endtime="20221104 13:20:09.302"/>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${relief_statement}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.340" level="INFO">${relief_statement} = £0 will be dispensed to 0 Working Class Hero/s</msg>
+<status status="PASS" starttime="20221104 23:14:50.340" endtime="20221104 23:14:50.340"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.305" endtime="20221104 23:14:50.340"/>
 </kw>
 <kw name="Splittextforpeople" library="Helpfunction">
 <var>${check_against_people}</var>
-<arg>${init_relief_statement}</arg>
-<arg>${init_table}</arg>
-<msg timestamp="20221104 13:20:09.303" level="INFO">${check_against_people} = True</msg>
-<status status="PASS" starttime="20221104 13:20:09.302" endtime="20221104 13:20:09.303"/>
+<arg>${relief_statement}</arg>
+<arg>${api_relief_summary_heroes}</arg>
+<msg timestamp="20221104 23:14:50.340" level="INFO">${check_against_people} = True</msg>
+<status status="PASS" starttime="20221104 23:14:50.340" endtime="20221104 23:14:50.340"/>
 </kw>
 <if>
 <branch type="IF" condition="${check_against_people} == ${False}">
 <kw name="Fail" library="BuiltIn">
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.303" endtime="20221104 13:20:09.303"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.340" endtime="20221104 23:14:50.340"/>
 </kw>
-<status status="NOT RUN" starttime="20221104 13:20:09.303" endtime="20221104 13:20:09.303"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.340" endtime="20221104 23:14:50.340"/>
 </branch>
-<status status="PASS" starttime="20221104 13:20:09.303" endtime="20221104 13:20:09.303"/>
+<status status="PASS" starttime="20221104 23:14:50.340" endtime="20221104 23:14:50.340"/>
 </if>
-<kw name="Create List" library="BuiltIn">
-<var>@{PriceList}</var>
-<doc>Returns a list containing given items.</doc>
-<msg timestamp="20221104 13:20:09.303" level="INFO">@{PriceList} = [ ]</msg>
-<status status="PASS" starttime="20221104 13:20:09.303" endtime="20221104 13:20:09.303"/>
-</kw>
-<for flavor="IN RANGE">
-<var>${index}</var>
-<value>1</value>
-<value>${init_table}+1</value>
-<iter>
-<var name="${index}">1</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${var}</var>
-<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 13:20:09.319" level="INFO">${var} = 95.00</msg>
-<status status="PASS" starttime="20221104 13:20:09.303" endtime="20221104 13:20:09.319"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${PriceList}</arg>
-<arg>${var}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221104 13:20:09.319" endtime="20221104 13:20:09.319"/>
-</kw>
-<status status="PASS" starttime="20221104 13:20:09.303" endtime="20221104 13:20:09.319"/>
-</iter>
-<iter>
-<var name="${index}">2</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${var}</var>
-<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 13:20:09.333" level="INFO">${var} = 511.00</msg>
-<status status="PASS" starttime="20221104 13:20:09.319" endtime="20221104 13:20:09.333"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${PriceList}</arg>
-<arg>${var}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221104 13:20:09.333" endtime="20221104 13:20:09.333"/>
-</kw>
-<status status="PASS" starttime="20221104 13:20:09.319" endtime="20221104 13:20:09.333"/>
-</iter>
-<iter>
-<var name="${index}">3</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${var}</var>
-<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 13:20:09.623" level="INFO">${var} = 50.00</msg>
-<status status="PASS" starttime="20221104 13:20:09.333" endtime="20221104 13:20:09.623"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${PriceList}</arg>
-<arg>${var}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221104 13:20:09.623" endtime="20221104 13:20:09.623"/>
-</kw>
-<status status="PASS" starttime="20221104 13:20:09.333" endtime="20221104 13:20:09.623"/>
-</iter>
-<status status="PASS" starttime="20221104 13:20:09.303" endtime="20221104 13:20:09.623"/>
-</for>
-<kw name="Set Variable" library="BuiltIn">
-<var>${sum_of_price}</var>
-<arg>${0.00}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 13:20:09.624" level="INFO">${sum_of_price} = 0.0</msg>
-<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.624"/>
-</kw>
-<for flavor="IN">
-<var>${element}</var>
-<value>@{PriceList}</value>
-<iter>
-<var name="${element}">95.00</var>
-<kw name="Set Variable" library="BuiltIn">
-<var>${inidcated}</var>
-<arg>${element}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 13:20:09.624" level="INFO">${inidcated} = 95.00</msg>
-<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.624"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sum_of_price}</var>
-<arg>${sum_of_price}+${inidcated}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221104 13:20:09.624" level="INFO">${sum_of_price} = 95.0</msg>
-<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.624"/>
-</kw>
-<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.624"/>
-</iter>
-<iter>
-<var name="${element}">511.00</var>
-<kw name="Set Variable" library="BuiltIn">
-<var>${inidcated}</var>
-<arg>${element}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 13:20:09.624" level="INFO">${inidcated} = 511.00</msg>
-<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.624"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sum_of_price}</var>
-<arg>${sum_of_price}+${inidcated}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221104 13:20:09.625" level="INFO">${sum_of_price} = 606.0</msg>
-<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.625"/>
-</kw>
-<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.625"/>
-</iter>
-<iter>
-<var name="${element}">50.00</var>
-<kw name="Set Variable" library="BuiltIn">
-<var>${inidcated}</var>
-<arg>${element}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 13:20:09.625" level="INFO">${inidcated} = 50.00</msg>
-<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sum_of_price}</var>
-<arg>${sum_of_price}+${inidcated}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221104 13:20:09.625" level="INFO">${sum_of_price} = 656.0</msg>
-<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
-</kw>
-<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
-</iter>
-<status status="PASS" starttime="20221104 13:20:09.624" endtime="20221104 13:20:09.625"/>
-</for>
-<kw name="Round To 2 Dp" library="Helpfunction">
-<var>${test_round}</var>
-<arg>${sum_of_price}</arg>
-<msg timestamp="20221104 13:20:09.625" level="INFO">${test_round} = 656.00</msg>
-<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
-</kw>
 <kw name="Splittextforcheckprice" library="Helpfunction">
 <var>${check_against_price}</var>
-<arg>${init_relief_statement}</arg>
-<arg>${test_round}</arg>
-<msg timestamp="20221104 13:20:09.625" level="INFO">${check_against_price} = True</msg>
-<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
+<arg>${relief_statement}</arg>
+<arg>${api_relief_summary_total_relief}</arg>
+<msg timestamp="20221104 23:14:50.340" level="INFO">${check_against_price} = True</msg>
+<status status="PASS" starttime="20221104 23:14:50.340" endtime="20221104 23:14:50.340"/>
 </kw>
 <if>
 <branch type="IF" condition="${check_against_price}">
 <kw name="Pass Execution" library="BuiltIn">
 <arg>Sub Price Sub Test Passed</arg>
 <doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
-<msg timestamp="20221104 13:20:09.625" level="INFO">Execution passed with message:
+<msg timestamp="20221104 23:14:50.340" level="INFO">Execution passed with message:
 Sub Price Sub Test Passed</msg>
-<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
+<status status="PASS" starttime="20221104 23:14:50.340" endtime="20221104 23:14:50.340"/>
 </kw>
-<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
+<status status="PASS" starttime="20221104 23:14:50.340" endtime="20221104 23:14:50.340"/>
 </branch>
 <branch type="ELSE">
 <kw name="Fail" library="BuiltIn">
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.341" endtime="20221104 23:14:50.341"/>
 </kw>
-<status status="NOT RUN" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.340" endtime="20221104 23:14:50.341"/>
 </branch>
-<status status="PASS" starttime="20221104 13:20:09.625" endtime="20221104 13:20:09.625"/>
+<status status="PASS" starttime="20221104 23:14:50.340" endtime="20221104 23:14:50.341"/>
 </if>
-<status status="PASS" starttime="20221104 13:20:09.257" endtime="20221104 13:20:09.625"/>
+<status status="PASS" starttime="20221104 23:14:50.305" endtime="20221104 23:14:50.341"/>
 </branch>
-<status status="PASS" starttime="20221104 13:20:09.256" endtime="20221104 13:20:09.625"/>
+<branch type="ELSE">
+<kw name="Get Subsequent Financial Relief Summary Statement" library="resources">
+<status status="NOT RUN" starttime="20221104 23:14:50.341" endtime="20221104 23:14:50.341"/>
+</kw>
+<kw name="Splittextforpeople" library="Helpfunction">
+<var>${check_against_people}</var>
+<arg>${relief_statement}</arg>
+<arg>${api_relief_summary_heroes}</arg>
+<status status="NOT RUN" starttime="20221104 23:14:50.341" endtime="20221104 23:14:50.341"/>
+</kw>
+<if>
+<branch type="IF" condition="${check_against_people} == ${False}">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:50.341" endtime="20221104 23:14:50.341"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 23:14:50.341" endtime="20221104 23:14:50.341"/>
+</branch>
+<status status="NOT RUN" starttime="20221104 23:14:50.341" endtime="20221104 23:14:50.341"/>
+</if>
+<kw name="Splittextforcheckprice" library="Helpfunction">
+<var>${check_against_price}</var>
+<arg>${relief_statement}</arg>
+<arg>${api_relief_summary_total_relief}</arg>
+<status status="NOT RUN" starttime="20221104 23:14:50.341" endtime="20221104 23:14:50.341"/>
+</kw>
+<if>
+<branch type="IF" condition="${check_against_price}">
+<kw name="Pass Execution" library="BuiltIn">
+<arg>Sub Price Sub Test Passed</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:50.341" endtime="20221104 23:14:50.341"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 23:14:50.341" endtime="20221104 23:14:50.341"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:50.341" endtime="20221104 23:14:50.341"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 23:14:50.341" endtime="20221104 23:14:50.341"/>
+</branch>
+<status status="NOT RUN" starttime="20221104 23:14:50.341" endtime="20221104 23:14:50.341"/>
+</if>
+<status status="NOT RUN" starttime="20221104 23:14:50.341" endtime="20221104 23:14:50.341"/>
+</branch>
+<status status="PASS" starttime="20221104 23:14:50.305" endtime="20221104 23:14:50.341"/>
 </if>
 <doc>This test case verifies the initial relief summary text for The Oppenheimer Project</doc>
 <tag>Initial</tag>
-<status status="PASS" starttime="20221104 13:20:09.239" endtime="20221104 13:20:09.626">Sub Price Sub Test Passed</status>
+<status status="PASS" starttime="20221104 23:14:50.277" endtime="20221104 23:14:50.341">Sub Price Sub Test Passed</status>
 </test>
-<test id="s1-s1-s1-s1-t3" name="Verify Initial Text of Summary Relief Text Of The Oppenheimer Project From Front End" line="124">
+<test id="s1-s1-s1-s1-t3" name="Verify Initial Text of Summary Relief Statement Of The Oppenheimer Project Corresponds To Front End Table" line="98">
+<kw name="Get Number Of Heroes" library="resources">
 <kw name="Get Number Of Users" library="Helpfunction">
 <var>${number_of_users}</var>
-<msg timestamp="20221104 13:20:09.633" level="INFO">${number_of_users} = 3</msg>
-<status status="PASS" starttime="20221104 13:20:09.626" endtime="20221104 13:20:09.633"/>
+<msg timestamp="20221104 23:14:50.346" level="INFO">${number_of_users} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.342" endtime="20221104 23:14:50.346"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${number_of_users}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.346" level="INFO">${number_of_users} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.346" endtime="20221104 23:14:50.346"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.342" endtime="20221104 23:14:50.346"/>
 </kw>
 <if>
 <branch type="IF" condition="${number_of_users} == ${0}">
+<kw name="Get Initial Financial Relief Summary Statement" library="resources">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://*[@id="contents"]/div[2]/div/p</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+<status status="PASS" starttime="20221104 23:14:50.347" endtime="20221104 23:14:50.359"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
-<var>${init_relief_statement}</var>
+<var>${relief_statement}</var>
 <arg>xpath://*[@id="contents"]/div[2]/div/p</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+<msg timestamp="20221104 23:14:50.368" level="INFO">${relief_statement} = £0 will be dispensed to 0 Working Class Hero/s</msg>
+<status status="PASS" starttime="20221104 23:14:50.359" endtime="20221104 23:14:50.368"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${init_relief_statement}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${relief_statement}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.368" level="INFO">${relief_statement} = £0 will be dispensed to 0 Working Class Hero/s</msg>
+<status status="PASS" starttime="20221104 23:14:50.368" endtime="20221104 23:14:50.368"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.346" endtime="20221104 23:14:50.368"/>
 </kw>
 <kw name="Splittextforpeople" library="Helpfunction">
 <var>${check_against_people}</var>
-<arg>${init_relief_statement}</arg>
+<arg>${relief_statement}</arg>
 <arg>${0}</arg>
-<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+<msg timestamp="20221104 23:14:50.369" level="INFO">${check_against_people} = True</msg>
+<status status="PASS" starttime="20221104 23:14:50.368" endtime="20221104 23:14:50.369"/>
 </kw>
 <if>
 <branch type="IF" condition="${check_against_people} == ${False}">
 <kw name="Fail" library="BuiltIn">
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.369"/>
 </kw>
-<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.369"/>
 </branch>
-<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+<status status="PASS" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.369"/>
 </if>
 <kw name="Splittextforcheckprice" library="Helpfunction">
 <var>${check_against_price}</var>
-<arg>${init_relief_statement}</arg>
+<arg>${relief_statement}</arg>
 <arg>${0}</arg>
-<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
+<msg timestamp="20221104 23:14:50.369" level="INFO">${check_against_price} = True</msg>
+<status status="PASS" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.369"/>
 </kw>
 <if>
 <branch type="IF" condition="${check_against_price}">
 <kw name="Pass Execution" library="BuiltIn">
 <arg>Sub Price Sub Test Passed</arg>
 <doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
-</kw>
-<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
-</branch>
-<branch type="ELSE">
-<kw name="Fail" library="BuiltIn">
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
-</kw>
-<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
-</branch>
-<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
-</if>
-<status status="NOT RUN" starttime="20221104 13:20:09.634" endtime="20221104 13:20:09.634"/>
-</branch>
-<branch type="ELSE">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath://*[@id="contents"]/div[3]/div/p</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221104 13:20:09.634" endtime="20221104 13:20:10.339"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${init_relief_statement}</var>
-<arg>xpath://*[@id="contents"]/div[3]/div/p</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 13:20:10.351" level="INFO">${init_relief_statement} = £656.00 will be dispensed to 3 Working Class Hero/s</msg>
-<status status="PASS" starttime="20221104 13:20:10.339" endtime="20221104 13:20:10.351"/>
-</kw>
-<kw name="Get Element Count" library="SeleniumLibrary">
-<var>${init_table}</var>
-<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr</arg>
-<doc>Returns the number of elements matching ``locator``.</doc>
-<msg timestamp="20221104 13:20:10.355" level="INFO">${init_table} = 3</msg>
-<status status="PASS" starttime="20221104 13:20:10.351" endtime="20221104 13:20:10.355"/>
-</kw>
-<kw name="Splittextforpeople" library="Helpfunction">
-<var>${check_against_people}</var>
-<arg>${init_relief_statement}</arg>
-<arg>${init_table}</arg>
-<msg timestamp="20221104 13:20:10.355" level="INFO">${check_against_people} = True</msg>
-<status status="PASS" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.355"/>
-</kw>
-<if>
-<branch type="IF" condition="${check_against_people} == ${False}">
-<kw name="Fail" library="BuiltIn">
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.355"/>
-</kw>
-<status status="NOT RUN" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.355"/>
-</branch>
-<status status="PASS" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.355"/>
-</if>
-<kw name="Create List" library="BuiltIn">
-<var>@{PriceList}</var>
-<doc>Returns a list containing given items.</doc>
-<msg timestamp="20221104 13:20:10.355" level="INFO">@{PriceList} = [ ]</msg>
-<status status="PASS" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.355"/>
-</kw>
-<for flavor="IN RANGE">
-<var>${index}</var>
-<value>1</value>
-<value>${init_table}+1</value>
-<iter>
-<var name="${index}">1</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${var}</var>
-<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 13:20:10.373" level="INFO">${var} = 95.00</msg>
-<status status="PASS" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.373"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${PriceList}</arg>
-<arg>${var}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221104 13:20:10.373" endtime="20221104 13:20:10.373"/>
-</kw>
-<status status="PASS" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.373"/>
-</iter>
-<iter>
-<var name="${index}">2</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${var}</var>
-<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 13:20:10.381" level="INFO">${var} = 511.00</msg>
-<status status="PASS" starttime="20221104 13:20:10.373" endtime="20221104 13:20:10.381"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${PriceList}</arg>
-<arg>${var}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221104 13:20:10.381" endtime="20221104 13:20:10.381"/>
-</kw>
-<status status="PASS" starttime="20221104 13:20:10.373" endtime="20221104 13:20:10.381"/>
-</iter>
-<iter>
-<var name="${index}">3</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${var}</var>
-<arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221104 13:20:10.389" level="INFO">${var} = 50.00</msg>
-<status status="PASS" starttime="20221104 13:20:10.381" endtime="20221104 13:20:10.389"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${PriceList}</arg>
-<arg>${var}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221104 13:20:10.389" endtime="20221104 13:20:10.389"/>
-</kw>
-<status status="PASS" starttime="20221104 13:20:10.381" endtime="20221104 13:20:10.389"/>
-</iter>
-<status status="PASS" starttime="20221104 13:20:10.355" endtime="20221104 13:20:10.389"/>
-</for>
-<kw name="Set Variable" library="BuiltIn">
-<var>${sum_of_price}</var>
-<arg>${0.00}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 13:20:10.389" level="INFO">${sum_of_price} = 0.0</msg>
-<status status="PASS" starttime="20221104 13:20:10.389" endtime="20221104 13:20:10.389"/>
-</kw>
-<for flavor="IN">
-<var>${element}</var>
-<value>@{PriceList}</value>
-<iter>
-<var name="${element}">95.00</var>
-<kw name="Set Variable" library="BuiltIn">
-<var>${inidcated}</var>
-<arg>${element}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 13:20:10.390" level="INFO">${inidcated} = 95.00</msg>
-<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sum_of_price}</var>
-<arg>${sum_of_price}+${inidcated}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221104 13:20:10.390" level="INFO">${sum_of_price} = 95.0</msg>
-<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
-</kw>
-<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
-</iter>
-<iter>
-<var name="${element}">511.00</var>
-<kw name="Set Variable" library="BuiltIn">
-<var>${inidcated}</var>
-<arg>${element}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 13:20:10.390" level="INFO">${inidcated} = 511.00</msg>
-<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sum_of_price}</var>
-<arg>${sum_of_price}+${inidcated}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221104 13:20:10.390" level="INFO">${sum_of_price} = 606.0</msg>
-<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
-</kw>
-<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
-</iter>
-<iter>
-<var name="${element}">50.00</var>
-<kw name="Set Variable" library="BuiltIn">
-<var>${inidcated}</var>
-<arg>${element}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221104 13:20:10.390" level="INFO">${inidcated} = 50.00</msg>
-<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sum_of_price}</var>
-<arg>${sum_of_price}+${inidcated}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20221104 13:20:10.390" level="INFO">${sum_of_price} = 656.0</msg>
-<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
-</kw>
-<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.390"/>
-</iter>
-<status status="PASS" starttime="20221104 13:20:10.389" endtime="20221104 13:20:10.390"/>
-</for>
-<kw name="Round To 2 Dp" library="Helpfunction">
-<var>${test_round}</var>
-<arg>${sum_of_price}</arg>
-<msg timestamp="20221104 13:20:10.391" level="INFO">${test_round} = 656.00</msg>
-<status status="PASS" starttime="20221104 13:20:10.390" endtime="20221104 13:20:10.391"/>
-</kw>
-<kw name="Splittextforcheckprice" library="Helpfunction">
-<var>${check_against_price}</var>
-<arg>${init_relief_statement}</arg>
-<arg>${test_round}</arg>
-<msg timestamp="20221104 13:20:10.391" level="INFO">${check_against_price} = True</msg>
-<status status="PASS" starttime="20221104 13:20:10.391" endtime="20221104 13:20:10.391"/>
-</kw>
-<if>
-<branch type="IF" condition="${check_against_price}">
-<kw name="Pass Execution" library="BuiltIn">
-<arg>Sub Price Sub Test Passed</arg>
-<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
-<msg timestamp="20221104 13:20:10.391" level="INFO">Execution passed with message:
+<msg timestamp="20221104 23:14:50.369" level="INFO">Execution passed with message:
 Sub Price Sub Test Passed</msg>
-<status status="PASS" starttime="20221104 13:20:10.391" endtime="20221104 13:20:10.391"/>
+<status status="PASS" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.369"/>
 </kw>
-<status status="PASS" starttime="20221104 13:20:10.391" endtime="20221104 13:20:10.391"/>
+<status status="PASS" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.369"/>
 </branch>
 <branch type="ELSE">
 <kw name="Fail" library="BuiltIn">
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" starttime="20221104 13:20:10.391" endtime="20221104 13:20:10.391"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.369"/>
 </kw>
-<status status="NOT RUN" starttime="20221104 13:20:10.391" endtime="20221104 13:20:10.391"/>
+<status status="NOT RUN" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.369"/>
 </branch>
-<status status="PASS" starttime="20221104 13:20:10.391" endtime="20221104 13:20:10.391"/>
+<status status="PASS" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.369"/>
 </if>
-<status status="PASS" starttime="20221104 13:20:09.634" endtime="20221104 13:20:10.391"/>
+<status status="PASS" starttime="20221104 23:14:50.346" endtime="20221104 23:14:50.369"/>
 </branch>
-<status status="PASS" starttime="20221104 13:20:09.633" endtime="20221104 13:20:10.391"/>
+<branch type="ELSE">
+<kw name="Get Subsequent Financial Relief Summary Statement" library="resources">
+<status status="NOT RUN" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.369"/>
+</kw>
+<kw name="Count Rows In Table" library="resources">
+<status status="NOT RUN" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.369"/>
+</kw>
+<kw name="Splittextforpeople" library="Helpfunction">
+<var>${check_against_people}</var>
+<arg>${relief_statement}</arg>
+<arg>${initial_rows}</arg>
+<status status="NOT RUN" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.369"/>
+</kw>
+<if>
+<branch type="IF" condition="${check_against_people} == ${False}">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.369"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.369"/>
+</branch>
+<status status="NOT RUN" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.369"/>
+</if>
+<kw name="Calculate Total Price From Table" library="resources">
+<status status="NOT RUN" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.370"/>
+</kw>
+<kw name="Round To 2 Dp" library="Helpfunction">
+<var>${rounded_price_from_table}</var>
+<arg>${sum_of_price_from_table}</arg>
+<status status="NOT RUN" starttime="20221104 23:14:50.370" endtime="20221104 23:14:50.370"/>
+</kw>
+<kw name="Splittextforcheckprice" library="Helpfunction">
+<var>${check_against_price}</var>
+<arg>${relief_statement}</arg>
+<arg>${rounded_price_from_table}</arg>
+<status status="NOT RUN" starttime="20221104 23:14:50.370" endtime="20221104 23:14:50.370"/>
+</kw>
+<if>
+<branch type="IF" condition="${check_against_price}">
+<kw name="Pass Execution" library="BuiltIn">
+<arg>Sub Price Sub Test Passed</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:50.370" endtime="20221104 23:14:50.370"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 23:14:50.370" endtime="20221104 23:14:50.370"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:50.370" endtime="20221104 23:14:50.370"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 23:14:50.370" endtime="20221104 23:14:50.370"/>
+</branch>
+<status status="NOT RUN" starttime="20221104 23:14:50.370" endtime="20221104 23:14:50.370"/>
+</if>
+<status status="NOT RUN" starttime="20221104 23:14:50.369" endtime="20221104 23:14:50.370"/>
+</branch>
+<status status="PASS" starttime="20221104 23:14:50.346" endtime="20221104 23:14:50.370"/>
 </if>
 <doc>This test case verifies the initial relief summary text for The Oppenheimer Project</doc>
 <tag>Initial</tag>
-<status status="PASS" starttime="20221104 13:20:09.626" endtime="20221104 13:20:10.391">Sub Price Sub Test Passed</status>
+<status status="PASS" starttime="20221104 23:14:50.341" endtime="20221104 23:14:50.370">Sub Price Sub Test Passed</status>
+</test>
+<test id="s1-s1-s1-s1-t4" name="Verify Initial Sum of Relief From Database Of The Oppenheimer Project Corresponds To Front End Table" line="144">
+<kw name="Get Number Of Heroes" library="resources">
+<kw name="Get Number Of Users" library="Helpfunction">
+<var>${number_of_users}</var>
+<msg timestamp="20221104 23:14:50.374" level="INFO">${number_of_users} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.370" endtime="20221104 23:14:50.374"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${number_of_users}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.375" level="INFO">${number_of_users} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.374" endtime="20221104 23:14:50.375"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.370" endtime="20221104 23:14:50.375"/>
+</kw>
+<kw name="Get Database Rounded Sum Of Relief" library="resources">
+<kw name="Get Total Relief" library="Helpfunction">
+<var>${total_database_relief}</var>
+<msg timestamp="20221104 23:14:50.378" level="INFO">${total_database_relief} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.375" endtime="20221104 23:14:50.378"/>
+</kw>
+<kw name="Round To 2 Dp" library="Helpfunction">
+<var>${rounded_total_database_relief}</var>
+<arg>${total_database_relief}</arg>
+<msg timestamp="20221104 23:14:50.378" level="INFO">${rounded_total_database_relief} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.378" endtime="20221104 23:14:50.378"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${rounded_total_database_relief}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.379" level="INFO">${rounded_total_database_relief} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.378" endtime="20221104 23:14:50.379"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.375" endtime="20221104 23:14:50.379"/>
+</kw>
+<if>
+<branch type="IF" condition="${number_of_users} == ${0}">
+<kw name="Skip" library="BuiltIn">
+<doc>Skips the rest of the current test.</doc>
+<msg timestamp="20221104 23:14:50.379" level="SKIP">Skipped with Skip keyword.</msg>
+<status status="SKIP" starttime="20221104 23:14:50.379" endtime="20221104 23:14:50.379"/>
+</kw>
+<status status="SKIP" starttime="20221104 23:14:50.379" endtime="20221104 23:14:50.379"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Subsequent Financial Relief Summary Statement" library="resources">
+<status status="NOT RUN" starttime="20221104 23:14:50.379" endtime="20221104 23:14:50.379"/>
+</kw>
+<kw name="Count Rows In Table" library="resources">
+<status status="NOT RUN" starttime="20221104 23:14:50.379" endtime="20221104 23:14:50.379"/>
+</kw>
+<kw name="Calculate Total Price From Table" library="resources">
+<status status="NOT RUN" starttime="20221104 23:14:50.379" endtime="20221104 23:14:50.379"/>
+</kw>
+<kw name="Round To 2 Dp" library="Helpfunction">
+<var>${rounded_price_from_table}</var>
+<arg>${sum_of_price_from_table}</arg>
+<status status="NOT RUN" starttime="20221104 23:14:50.379" endtime="20221104 23:14:50.379"/>
+</kw>
+<if>
+<branch type="IF" condition="${rounded_total_database_relief} == ${rounded_price_from_table}">
+<kw name="Pass Execution" library="BuiltIn">
+<arg>Pass as database corresponds to summary front end total</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:50.380" endtime="20221104 23:14:50.380"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 23:14:50.379" endtime="20221104 23:14:50.380"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:50.380" endtime="20221104 23:14:50.380"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 23:14:50.380" endtime="20221104 23:14:50.380"/>
+</branch>
+<status status="NOT RUN" starttime="20221104 23:14:50.379" endtime="20221104 23:14:50.380"/>
+</if>
+<status status="NOT RUN" starttime="20221104 23:14:50.379" endtime="20221104 23:14:50.380"/>
+</branch>
+<status status="SKIP" starttime="20221104 23:14:50.379" endtime="20221104 23:14:50.380"/>
+</if>
+<doc>This test case verifies the initial relief summary text for The Oppenheimer Project</doc>
+<tag>Initial</tag>
+<status status="SKIP" starttime="20221104 23:14:50.370" endtime="20221104 23:14:50.380">Skipped with Skip keyword.</status>
 </test>
 <doc>Login Functionality</doc>
-<status status="PASS" starttime="20221104 13:20:09.174" endtime="20221104 13:20:10.391"/>
+<status status="PASS" starttime="20221104 23:14:50.207" endtime="20221104 23:14:50.380"/>
 </suite>
-<suite id="s1-s1-s1-s2" name="Robottest Copy" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test/Initialisation/robottest copy.robot">
-<test id="s1-s1-s1-s2-t1" name="Verify Successful Login to OrangeHRM" line="13">
+<suite id="s1-s1-s1-s2" name="0002 initial financial calculation for Bookeepers" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test/Initialisation/0002_initial_financial_calculation_for_Bookeepers.robot">
+<test id="s1-s1-s1-s2-t1" name="Verify Initial Database Total Relief Of The Oppenheimer Project Corresponds To Relief From API Summary Call" line="16">
+<kw name="Get Number Of Heroes" library="resources">
+<kw name="Get Number Of Users" library="Helpfunction">
+<var>${number_of_users}</var>
+<msg timestamp="20221104 23:14:50.386" level="INFO">${number_of_users} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.383" endtime="20221104 23:14:50.386"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${number_of_users}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.387" level="INFO">${number_of_users} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.386" endtime="20221104 23:14:50.387"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.383" endtime="20221104 23:14:50.387"/>
+</kw>
+<kw name="Get Financial Summary For Number Of Heroes From Api" library="resources">
+<kw name="Curl Get Relief Summary Users" library="Helpfunction">
+<var>${api_relief_summary_heroes}</var>
+<msg timestamp="20221104 23:14:50.390" level="INFO">${api_relief_summary_heroes} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.387" endtime="20221104 23:14:50.390"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${api_relief_summary_heroes}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.391" level="INFO">${api_relief_summary_heroes} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.391" endtime="20221104 23:14:50.391"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.387" endtime="20221104 23:14:50.391"/>
+</kw>
+<kw name="Get Financial Summary For Total Relief From Api" library="resources">
+<kw name="Curl Get Relief Summary Relief" library="Helpfunction">
+<var>${api_relief_summary_total_relief}</var>
+<msg timestamp="20221104 23:14:50.394" level="INFO">${api_relief_summary_total_relief} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.391" endtime="20221104 23:14:50.394"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${api_relief_summary_total_relief}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.395" level="INFO">${api_relief_summary_total_relief} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.395" endtime="20221104 23:14:50.395"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.391" endtime="20221104 23:14:50.395"/>
+</kw>
+<kw name="Get Database Rounded Sum Of Relief" library="resources">
+<kw name="Get Total Relief" library="Helpfunction">
+<var>${total_database_relief}</var>
+<msg timestamp="20221104 23:14:50.398" level="INFO">${total_database_relief} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.395" endtime="20221104 23:14:50.398"/>
+</kw>
+<kw name="Round To 2 Dp" library="Helpfunction">
+<var>${rounded_total_database_relief}</var>
+<arg>${total_database_relief}</arg>
+<msg timestamp="20221104 23:14:50.399" level="INFO">${rounded_total_database_relief} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.398" endtime="20221104 23:14:50.399"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${rounded_total_database_relief}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.399" level="INFO">${rounded_total_database_relief} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.399" endtime="20221104 23:14:50.399"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.395" endtime="20221104 23:14:50.399"/>
+</kw>
+<if>
+<branch type="IF" condition="${rounded_total_database_relief} == ${api_relief_summary_total_relief}">
+<kw name="Pass Execution" library="BuiltIn">
+<arg>Pass as database corresponds to summary api call</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<msg timestamp="20221104 23:14:50.399" level="INFO">Execution passed with message:
+Pass as database corresponds to summary api call</msg>
+<status status="PASS" starttime="20221104 23:14:50.399" endtime="20221104 23:14:50.399"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.399" endtime="20221104 23:14:50.399"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:50.399" endtime="20221104 23:14:50.399"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 23:14:50.399" endtime="20221104 23:14:50.399"/>
+</branch>
+<status status="PASS" starttime="20221104 23:14:50.399" endtime="20221104 23:14:50.399"/>
+</if>
+<doc>This test case verifies the initial relief summary text for The Oppenheimer Project</doc>
+<tag>Initial</tag>
+<status status="PASS" starttime="20221104 23:14:50.383" endtime="20221104 23:14:50.399">Pass as database corresponds to summary api call</status>
+</test>
+<test id="s1-s1-s1-s2-t2" name="Verify Initial Text of Summary Relief Text Of The Oppenheimer Project Corresponds To Sum From Database" line="32">
+<kw name="Get Number Of Heroes" library="resources">
+<kw name="Get Number Of Users" library="Helpfunction">
+<var>${number_of_users}</var>
+<msg timestamp="20221104 23:14:50.403" level="INFO">${number_of_users} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.400" endtime="20221104 23:14:50.403"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${number_of_users}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.404" level="INFO">${number_of_users} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.403" endtime="20221104 23:14:50.404"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.400" endtime="20221104 23:14:50.404"/>
+</kw>
+<kw name="Get Database Rounded Sum Of Relief" library="resources">
+<kw name="Get Total Relief" library="Helpfunction">
+<var>${total_database_relief}</var>
+<msg timestamp="20221104 23:14:50.407" level="INFO">${total_database_relief} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.404" endtime="20221104 23:14:50.407"/>
+</kw>
+<kw name="Round To 2 Dp" library="Helpfunction">
+<var>${rounded_total_database_relief}</var>
+<arg>${total_database_relief}</arg>
+<msg timestamp="20221104 23:14:50.407" level="INFO">${rounded_total_database_relief} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.407" endtime="20221104 23:14:50.407"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${rounded_total_database_relief}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.407" level="INFO">${rounded_total_database_relief} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.407" endtime="20221104 23:14:50.407"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.404" endtime="20221104 23:14:50.408"/>
+</kw>
+<if>
+<branch type="IF" condition="${number_of_users} == ${0}">
+<kw name="Get Initial Financial Relief Summary Statement" library="resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://*[@id="contents"]/div[2]/div/p</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221104 23:14:50.408" endtime="20221104 23:14:50.477"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${relief_statement}</var>
+<arg>xpath://*[@id="contents"]/div[2]/div/p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221104 23:14:50.484" level="INFO">${relief_statement} = £0 will be dispensed to 0 Working Class Hero/s</msg>
+<status status="PASS" starttime="20221104 23:14:50.477" endtime="20221104 23:14:50.484"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${relief_statement}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.485" level="INFO">${relief_statement} = £0 will be dispensed to 0 Working Class Hero/s</msg>
+<status status="PASS" starttime="20221104 23:14:50.484" endtime="20221104 23:14:50.485"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.408" endtime="20221104 23:14:50.485"/>
+</kw>
+<kw name="Splittextforcheckprice" library="Helpfunction">
+<var>${check_against_price}</var>
+<arg>${relief_statement}</arg>
+<arg>${rounded_total_database_relief}</arg>
+<msg timestamp="20221104 23:14:50.485" level="INFO">${check_against_price} = True</msg>
+<status status="PASS" starttime="20221104 23:14:50.485" endtime="20221104 23:14:50.485"/>
+</kw>
+<if>
+<branch type="IF" condition="${check_against_price}">
+<kw name="Pass Execution" library="BuiltIn">
+<arg>Sub Price Sub Test Passed</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<msg timestamp="20221104 23:14:50.485" level="INFO">Execution passed with message:
+Sub Price Sub Test Passed</msg>
+<status status="PASS" starttime="20221104 23:14:50.485" endtime="20221104 23:14:50.485"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.485" endtime="20221104 23:14:50.485"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:50.485" endtime="20221104 23:14:50.485"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 23:14:50.485" endtime="20221104 23:14:50.485"/>
+</branch>
+<status status="PASS" starttime="20221104 23:14:50.485" endtime="20221104 23:14:50.485"/>
+</if>
+<status status="PASS" starttime="20221104 23:14:50.408" endtime="20221104 23:14:50.485"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Subsequent Financial Relief Summary Statement" library="resources">
+<status status="NOT RUN" starttime="20221104 23:14:50.485" endtime="20221104 23:14:50.485"/>
+</kw>
+<kw name="Splittextforcheckprice" library="Helpfunction">
+<var>${check_against_price}</var>
+<arg>${relief_statement}</arg>
+<arg>${rounded_total_database_relief}</arg>
+<status status="NOT RUN" starttime="20221104 23:14:50.485" endtime="20221104 23:14:50.485"/>
+</kw>
+<if>
+<branch type="IF" condition="${check_against_price}">
+<kw name="Pass Execution" library="BuiltIn">
+<arg>Sub Price Sub Test Passed</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:50.485" endtime="20221104 23:14:50.485"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 23:14:50.485" endtime="20221104 23:14:50.485"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:50.485" endtime="20221104 23:14:50.485"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 23:14:50.485" endtime="20221104 23:14:50.485"/>
+</branch>
+<status status="NOT RUN" starttime="20221104 23:14:50.485" endtime="20221104 23:14:50.485"/>
+</if>
+<status status="NOT RUN" starttime="20221104 23:14:50.485" endtime="20221104 23:14:50.485"/>
+</branch>
+<status status="PASS" starttime="20221104 23:14:50.408" endtime="20221104 23:14:50.485"/>
+</if>
+<doc>This test case verifies the initial relief summary text for The Oppenheimer Project</doc>
+<tag>Initial</tag>
+<status status="PASS" starttime="20221104 23:14:50.399" endtime="20221104 23:14:50.485">Sub Price Sub Test Passed</status>
+</test>
+<test id="s1-s1-s1-s2-t3" name="Verify Initial Text of Summary Table Of The Oppenheimer Project Does Not Change When No Additional CSV Is Added And Refresh Relief Table Is Clicked" line="66">
+<kw name="Get Number Of Heroes" library="resources">
+<kw name="Get Number Of Users" library="Helpfunction">
+<var>${number_of_users}</var>
+<msg timestamp="20221104 23:14:50.491" level="INFO">${number_of_users} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.486" endtime="20221104 23:14:50.491"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${number_of_users}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221104 23:14:50.491" level="INFO">${number_of_users} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:50.491" endtime="20221104 23:14:50.491"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.486" endtime="20221104 23:14:50.491"/>
+</kw>
+<if>
+<branch type="IF" condition="${number_of_users} == ${0}">
+<kw name="Click On Refresh Tax Relief Table Button" library="resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="contents"]/button[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221104 23:14:50.492" level="INFO">Clicking element 'xpath://*[@id="contents"]/button[1]'.</msg>
+<status status="PASS" starttime="20221104 23:14:50.492" endtime="20221104 23:14:50.989"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:50.492" endtime="20221104 23:14:50.989"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://*[@id="contents"]/h1</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221104 23:14:50.989" endtime="20221104 23:14:51.792"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${init_text}</var>
+<arg>xpath://*[@id="contents"]/h1</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221104 23:14:51.802" level="INFO">${init_text} = No records at the moment 😢</msg>
+<status status="PASS" starttime="20221104 23:14:51.792" endtime="20221104 23:14:51.802"/>
+</kw>
+<kw name="Check Init Text" library="Helpfunction">
+<var>${result}</var>
+<arg>${init_text}</arg>
+<msg timestamp="20221104 23:14:51.802" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20221104 23:14:51.802" endtime="20221104 23:14:51.802"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221104 23:14:51.802" endtime="20221104 23:14:51.802"/>
+</kw>
+<if>
+<branch type="IF" condition="${result}">
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="contents"]/div[2]/table</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<msg timestamp="20221104 23:14:51.806" level="INFO">Current page does not contain element 'xpath://*[@id="contents"]/div[2]/table'.</msg>
+<status status="PASS" starttime="20221104 23:14:51.802" endtime="20221104 23:14:51.806"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>PASS</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221104 23:14:51.806" endtime="20221104 23:14:51.806"/>
+</kw>
+<status status="PASS" starttime="20221104 23:14:51.802" endtime="20221104 23:14:51.806"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:51.806" endtime="20221104 23:14:51.806"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 23:14:51.806" endtime="20221104 23:14:51.806"/>
+</branch>
+<status status="PASS" starttime="20221104 23:14:51.802" endtime="20221104 23:14:51.806"/>
+</if>
+<status status="PASS" starttime="20221104 23:14:50.492" endtime="20221104 23:14:51.806"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click On Refresh Tax Relief Table Button" library="resources">
+<status status="NOT RUN" starttime="20221104 23:14:51.806" endtime="20221104 23:14:51.806"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="contents"]/div[2]/table</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:51.806" endtime="20221104 23:14:51.806"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="contents"]/h1</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:51.806" endtime="20221104 23:14:51.806"/>
+</kw>
+<kw name="Count Rows In Table" library="resources">
+<status status="NOT RUN" starttime="20221104 23:14:51.806" endtime="20221104 23:14:51.806"/>
+</kw>
+<if>
+<branch type="IF" condition="${initial_rows} != ${number_of_users}">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:51.806" endtime="20221104 23:14:51.806"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 23:14:51.806" endtime="20221104 23:14:51.806"/>
+</branch>
+<branch type="ELSE">
+<kw name="Pass Execution" library="BuiltIn">
+<arg>Test Passed</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="NOT RUN" starttime="20221104 23:14:51.806" endtime="20221104 23:14:51.806"/>
+</kw>
+<status status="NOT RUN" starttime="20221104 23:14:51.806" endtime="20221104 23:14:51.806"/>
+</branch>
+<status status="NOT RUN" starttime="20221104 23:14:51.806" endtime="20221104 23:14:51.806"/>
+</if>
+<status status="NOT RUN" starttime="20221104 23:14:51.806" endtime="20221104 23:14:51.806"/>
+</branch>
+<status status="PASS" starttime="20221104 23:14:50.491" endtime="20221104 23:14:51.806"/>
+</if>
+<doc>This test case verifies the initial settings for the table for The Oppenheimer Project</doc>
+<tag>Initial</tag>
+<status status="PASS" starttime="20221104 23:14:50.486" endtime="20221104 23:14:51.807"/>
+</test>
+<doc>Login Functionality</doc>
+<status status="PASS" starttime="20221104 23:14:50.380" endtime="20221104 23:14:51.807"/>
+</suite>
+<suite id="s1-s1-s1-s3" name="Robottest Copy" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test/Initialisation/robottest copy.robot">
+<test id="s1-s1-s1-s3-t1" name="Verify Successful Login to OrangeHRM" line="13">
 <kw name="Get Element Count" library="SeleniumLibrary">
 <var>${happy}</var>
 <arg>xpath://*[@id="contents"]/div[2]/table/tbody/tr</arg>
 <doc>Returns the number of elements matching ``locator``.</doc>
-<msg timestamp="20221104 13:20:10.398" level="INFO">${happy} = 3</msg>
-<status status="PASS" starttime="20221104 13:20:10.394" endtime="20221104 13:20:10.398"/>
+<msg timestamp="20221104 23:14:51.816" level="INFO">${happy} = 0</msg>
+<status status="PASS" starttime="20221104 23:14:51.809" endtime="20221104 23:14:51.816"/>
 </kw>
 <doc>This test case verifies the initial settings for The Oppenheimer Project</doc>
 <tag>Initial</tag>
-<status status="PASS" starttime="20221104 13:20:10.393" endtime="20221104 13:20:10.398"/>
+<status status="PASS" starttime="20221104 23:14:51.809" endtime="20221104 23:14:51.816"/>
 </test>
-<test id="s1-s1-s1-s2-t2" name="Verify MyBeautiful Function Is Working" line="71">
+<test id="s1-s1-s1-s3-t2" name="Verify MyBeautiful Function Is Working" line="71">
 <kw name="Add One To Integer" library="Functest">
 <var>${value}</var>
 <arg>${4}</arg>
-<msg timestamp="20221104 13:20:10.399" level="INFO">${value} = 5</msg>
-<status status="PASS" starttime="20221104 13:20:10.399" endtime="20221104 13:20:10.399"/>
+<msg timestamp="20221104 23:14:51.816" level="INFO">${value} = 5</msg>
+<status status="PASS" starttime="20221104 23:14:51.816" endtime="20221104 23:14:51.816"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Hi</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 13:20:10.399" level="INFO">Hi</msg>
-<status status="PASS" starttime="20221104 13:20:10.399" endtime="20221104 13:20:10.399"/>
+<msg timestamp="20221104 23:14:51.816" level="INFO">Hi</msg>
+<status status="PASS" starttime="20221104 23:14:51.816" endtime="20221104 23:14:51.816"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${value}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 13:20:10.399" level="INFO">5</msg>
-<status status="PASS" starttime="20221104 13:20:10.399" endtime="20221104 13:20:10.399"/>
+<msg timestamp="20221104 23:14:51.817" level="INFO">5</msg>
+<status status="PASS" starttime="20221104 23:14:51.817" endtime="20221104 23:14:51.817"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${value}</arg>
 <arg>${5}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20221104 13:20:10.399" endtime="20221104 13:20:10.399"/>
+<status status="PASS" starttime="20221104 23:14:51.817" endtime="20221104 23:14:51.817"/>
 </kw>
-<status status="PASS" starttime="20221104 13:20:10.398" endtime="20221104 13:20:10.399"/>
+<status status="PASS" starttime="20221104 23:14:51.816" endtime="20221104 23:14:51.817"/>
 </test>
 <doc>Login Functionality</doc>
-<status status="PASS" starttime="20221104 13:20:10.392" endtime="20221104 13:20:10.400"/>
+<status status="PASS" starttime="20221104 23:14:51.807" endtime="20221104 23:14:51.817"/>
 </suite>
-<status status="PASS" starttime="20221104 13:20:09.173" endtime="20221104 13:20:10.400"/>
+<status status="PASS" starttime="20221104 23:14:50.205" endtime="20221104 23:14:51.818"/>
 </suite>
 <suite id="s1-s1-s2" name="Sort2" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test/Sort2">
 <suite id="s1-s1-s2-s1" name="Robottest2" source="/Users/chuaqiyangkenneth/robot_assignment/kenneth_robot_assignment/Test/Sort2/robottest2.robot">
@@ -725,55 +912,56 @@ Sub Price Sub Test Passed</msg>
 <kw name="Add One To Integer" library="Functest">
 <var>${value}</var>
 <arg>${5}</arg>
-<msg timestamp="20221104 13:20:10.402" level="INFO">${value} = 6</msg>
-<status status="PASS" starttime="20221104 13:20:10.402" endtime="20221104 13:20:10.402"/>
+<msg timestamp="20221104 23:14:51.820" level="INFO">${value} = 6</msg>
+<status status="PASS" starttime="20221104 23:14:51.820" endtime="20221104 23:14:51.820"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Hi</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 13:20:10.403" level="INFO">Hi</msg>
-<status status="PASS" starttime="20221104 13:20:10.402" endtime="20221104 13:20:10.403"/>
+<msg timestamp="20221104 23:14:51.820" level="INFO">Hi</msg>
+<status status="PASS" starttime="20221104 23:14:51.820" endtime="20221104 23:14:51.820"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${value}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20221104 13:20:10.403" level="INFO">6</msg>
-<status status="PASS" starttime="20221104 13:20:10.403" endtime="20221104 13:20:10.403"/>
+<msg timestamp="20221104 23:14:51.820" level="INFO">6</msg>
+<status status="PASS" starttime="20221104 23:14:51.820" endtime="20221104 23:14:51.820"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${value}</arg>
 <arg>${6}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20221104 13:20:10.403" endtime="20221104 13:20:10.403"/>
+<status status="PASS" starttime="20221104 23:14:51.820" endtime="20221104 23:14:51.821"/>
 </kw>
-<status status="PASS" starttime="20221104 13:20:10.402" endtime="20221104 13:20:10.403"/>
+<status status="PASS" starttime="20221104 23:14:51.820" endtime="20221104 23:14:51.821"/>
 </test>
 <doc>Login Functionality</doc>
-<status status="PASS" starttime="20221104 13:20:10.401" endtime="20221104 13:20:10.403"/>
+<status status="PASS" starttime="20221104 23:14:51.818" endtime="20221104 23:14:51.821"/>
 </suite>
-<status status="PASS" starttime="20221104 13:20:10.400" endtime="20221104 13:20:10.403"/>
+<status status="PASS" starttime="20221104 23:14:51.818" endtime="20221104 23:14:51.821"/>
 </suite>
-<status status="PASS" starttime="20221104 13:20:09.172" endtime="20221104 13:20:10.404"/>
+<status status="PASS" starttime="20221104 23:14:50.204" endtime="20221104 23:14:51.821"/>
 </suite>
 <kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20221104 13:20:10.404" endtime="20221104 13:20:10.467"/>
+<status status="PASS" starttime="20221104 23:14:51.822" endtime="20221104 23:14:51.887"/>
 </kw>
-<status status="PASS" starttime="20221104 13:19:57.090" endtime="20221104 13:20:10.467"/>
+<status status="PASS" starttime="20221104 23:14:39.029" endtime="20221104 23:14:51.887"/>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="0" skip="0">All Tests</stat>
+<stat pass="9" fail="0" skip="1">All Tests</stat>
 </total>
 <tag>
-<stat pass="4" fail="0" skip="0">Initial</stat>
+<stat pass="7" fail="0" skip="1">Initial</stat>
 </tag>
 <suite>
-<stat pass="6" fail="0" skip="0" id="s1" name="Kenneth Robot Assignment">Kenneth Robot Assignment</stat>
-<stat pass="6" fail="0" skip="0" id="s1-s1" name="Test">Kenneth Robot Assignment.Test</stat>
-<stat pass="5" fail="0" skip="0" id="s1-s1-s1" name="Initialisation">Kenneth Robot Assignment.Test.Initialisation</stat>
-<stat pass="3" fail="0" skip="0" id="s1-s1-s1-s1" name="0001 Initial Page Test">Kenneth Robot Assignment.Test.Initialisation.0001 Initial Page Test</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1-s1-s2" name="Robottest Copy">Kenneth Robot Assignment.Test.Initialisation.Robottest Copy</stat>
+<stat pass="9" fail="0" skip="1" id="s1" name="Kenneth Robot Assignment">Kenneth Robot Assignment</stat>
+<stat pass="9" fail="0" skip="1" id="s1-s1" name="Test">Kenneth Robot Assignment.Test</stat>
+<stat pass="8" fail="0" skip="1" id="s1-s1-s1" name="Initialisation">Kenneth Robot Assignment.Test.Initialisation</stat>
+<stat pass="3" fail="0" skip="1" id="s1-s1-s1-s1" name="0001 Initial Page Before Clerk Entry Test">Kenneth Robot Assignment.Test.Initialisation.0001 Initial Page Before Clerk Entry Test</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1-s1-s2" name="0002 initial financial calculation for Bookeepers">Kenneth Robot Assignment.Test.Initialisation.0002 initial financial calculation for Bookeepers</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1-s3" name="Robottest Copy">Kenneth Robot Assignment.Test.Initialisation.Robottest Copy</stat>
 <stat pass="1" fail="0" skip="0" id="s1-s1-s2" name="Sort2">Kenneth Robot Assignment.Test.Sort2</stat>
 <stat pass="1" fail="0" skip="0" id="s1-s1-s2-s1" name="Robottest2">Kenneth Robot Assignment.Test.Sort2.Robottest2</stat>
 </suite>
