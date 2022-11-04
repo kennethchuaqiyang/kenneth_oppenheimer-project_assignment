@@ -19,6 +19,13 @@ Verify Successful Login to OrangeHRM
     ${happy}=    SeleniumLibrary.Get Element Count    xpath://*[@id="contents"]/div[2]/table/tbody/tr
     # Log    ${happy}
     
+# for inputting of files
+    # ${my_string}  Evaluate  r"/test1234.csv"
+    # ${abc} =  Helpfunction.working_directory  ${my_string}
+    # Log  ${abc}
+    # Choose File    xpath://*[@id="contents"]/div[1]/div[2]/input    ${abc}
+
+
     # Table Column Should Contain    xpath://*[@id="contents"]    1    4444
     
     # @{PriceList}=    Create List
@@ -67,10 +74,3 @@ Verify Successful Login to OrangeHRM
 #     Click Element  css:button[type="submit"]
 #     Element Should Be Visible  css:[href="/logout"]  timeout=5
 #     Close Browser
-
-Verify MyBeautiful Function Is Working
-    ${value} =  Functest.add_one_to_integer  ${4}
-    Log  Hi
-    Log  ${value}
-    Should Be Equal  ${value}    ${5}
-

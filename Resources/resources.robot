@@ -100,3 +100,8 @@ Get Database Rounded Sum Of Relief
 
 Click On Refresh Tax Relief Table Button
     Click Element    xpath://*[@id="contents"]/button[1]
+
+
+
+Click On Dispense Now Button
+    Click Element    xpath://*[@id="contents"]/a[2]
