@@ -1,9 +1,10 @@
 import requests
-headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
-response = requests.get('http://localhost:8080/calculator/taxRelief', headers=headers)
-prices = response.json()
-print(prices)
-list =[]
-for i in prices:
-    list.append(float(i["relief"]))
-print(sum(list))
+import os
+# headers = {'content-type': 'multipart/form-data'}
+# filename=os.getcwd()+'/Zero_Relief_1_person_FE_Clark_check.csv'
+# file = {'file': open(filename, 'rb')}
+# response = requests.post('http://localhost:8080/calculator/uploadLargeFileForInsertionToDatabase', files=file)
+# print(response)
+# print(response.text)
+# print(response.headers)
+# print(response.status_code)

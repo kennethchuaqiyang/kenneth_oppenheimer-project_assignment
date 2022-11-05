@@ -104,14 +104,14 @@ Verify Initial Text of Summary Relief Statement Of The Oppenheimer Project Corre
      IF    ${number_of_users} == ${0}
 
         Get Initial Financial Relief Summary Statement
-
+        
         ${check_against_people} =    Helpfunction.splittextforpeople  ${relief_statement}  ${0}
         IF    ${check_against_people} == ${False} 
             Fail            
         END
 
         ${check_against_price} =    Helpfunction.splittextforcheckprice  ${relief_statement}  ${0}
-        IF    ${check_against_price} 
+        IF    ${check_against_price} == ${True}
             Pass Execution    Sub Price Sub Test Passed
         ELSE
             Fail
@@ -132,6 +132,10 @@ Verify Initial Text of Summary Relief Statement Of The Oppenheimer Project Corre
         ${rounded_price_from_table} =    Helpfunction.round_to_2_dp  ${sum_of_price_from_table}
 
         ${check_against_price} =    Helpfunction.splittextforcheckprice  ${relief_statement}  ${rounded_price_from_table}
+        
+        Log To Console    check against price
+        Log To Console    ${rounded_price_from_table}
+        Log To Console    ${check_against_price}
         IF    ${check_against_price} 
             Pass Execution    Sub Price Sub Test Passed
         ELSE

@@ -1,5 +1,4 @@
 PATH=`pwd`:$PATH
 export PATH
-echo $PATH 
 python3 test.py
 robot -d results .

@@ -15,6 +15,15 @@ ${relief_statement}
 ${api_relief_summary_heroes}
 ${api_relief_summary_total_relief}
 ${rounded_total_database_relief}
+${initial_number_of_heroes}
+${subsequent_number_of_heroes}
+${filename}
+${national_id}
+${FE_Zero_Relief_1_Person_Check}    r"/Zero_Relief_1_person_FE_Clark_check.csv"
+${API_Zero_Relief_1_Person_Check}    r"/Zero_Relief_1_person_API_Clark_check.csv"
+${FE_Zero_Relief_2_Person_Check}    r"/Zero_Relief_2_person_FE_Clark_check.csv"
+${API_Zero_Relief_2_Person_Check}    r"/Zero_Relief_2_person_API_Clark_check.csv"
+${Retrival_Zero_Relief_1_Person_Check}    r"/Zero_Relief_1_person_Bookeeper_Retrival_Check.csv"
 
 *** Keywords ***
 
@@ -105,3 +114,33 @@ Click On Refresh Tax Relief Table Button
 
 Click On Dispense Now Button
     Click Element    xpath://*[@id="contents"]/a[2]
+
+Set Initial Number Of Heroes
+    Get Number Of Heroes
+    ${initial_number_of_heroes}    Set Variable    ${number_of_users}
+    Set Global Variable    ${initial_number_of_heroes}
+
+
+Set Subsequent Number Of Heroes
+    Get Number Of Heroes
+    ${subsequent_number_of_heroes}    Set Variable    ${number_of_users}
+    Set Global Variable    ${subsequent_number_of_heroes}
+
+Sending Files Through FE
+    # ${filename}  Evaluate  ${FE_Zero_Relief_1_Person_Check}
+    ${full_filename} =  Helpfunction.working_directory  ${filename}
+    Log To Console    ${full_filename}
+    # Wait Until Element Is Visible    xpath://*[@id="contents"]/div[1]/div[2]/input
+    Choose File    xpath://*[@id="contents"]/div[1]/div[2]/input    ${full_filename}
+
+Check For Valid Added National ID
+
+    Wait Until Element Is Visible    xpath://*[@id="contents"]
+
+    Table Column Should Contain    xpath://*[@id="contents"]    1    ${national_id}
+
+Get Browser Console Log Entries
+    ${selenium}=    Get Library Instance    SeleniumLibrary
+    ${webdriver}=    Set Variable     ${selenium._drivers.active_drivers}[0]
+    ${log entries}=    Evaluate    $webdriver.get_log('browser')
+    [Return]    ${log entries}

@@ -21,10 +21,12 @@ Verify Initial Dispensing Of Cash When There Is Amount To Be Dispensed
     Get Number Of Heroes
 
      IF    ${number_of_users} == ${0}
+          Skip
         Log To Console    hsdfihoasfhiosafhoads 
         Click On Dispense Now Button
         Sleep    5s
         Element Text Should Not Be    xpath://*[@id="app"]/div/main/div/div/div    Cash dispensed
+        Open Website The Oppenheimer Project
 
      ELSE
 
@@ -32,6 +34,7 @@ Verify Initial Dispensing Of Cash When There Is Amount To Be Dispensed
         Sleep    5s
         Wait Until Element Is Visible    xpath://*[@id="app"]/div/main/div/div/div
         Element Text Should Be    xpath://*[@id="app"]/div/main/div/div/div    Cash dispensed
+        Open Website The Oppenheimer Project
 
 
      END   
