@@ -19,6 +19,8 @@ ${initial_number_of_heroes}
 ${subsequent_number_of_heroes}
 ${filename}
 ${national_id}
+@{nat_id_list}
+${UploadFile}    r"/uploadFile.csv"
 ${FE_Zero_Relief_1_Person_Check}    r"/Zero_Relief_1_person_FE_Clark_check.csv"
 ${API_Zero_Relief_1_Person_Check}    r"/Zero_Relief_1_person_API_Clark_check.csv"
 ${FE_Zero_Relief_2_Person_Check}    r"/Zero_Relief_2_person_FE_Clark_check.csv"
@@ -120,6 +122,10 @@ Set Initial Number Of Heroes
     ${initial_number_of_heroes}    Set Variable    ${number_of_users}
     Set Global Variable    ${initial_number_of_heroes}
 
+Set natid for person
+    Get Number Of Heroes
+    ${national_id} =  Helpfunction.create_national_id  ${initial_number_of_heroes}
+    Set Global Variable    ${national_id}
 
 Set Subsequent Number Of Heroes
     Get Number Of Heroes
@@ -144,3 +150,11 @@ Get Browser Console Log Entries
     ${webdriver}=    Set Variable     ${selenium._drivers.active_drivers}[0]
     ${log entries}=    Evaluate    $webdriver.get_log('browser')
     [Return]    ${log entries}
+
+Check NatIds Exist in Table
+   FOR    ${nat_id}    IN    @{nat_id_list}
+        ${national_id}    Set Variable    ${nat_id}
+        Set Global Variable    ${national_id}
+        Check For Valid Added National ID
+        
+    END

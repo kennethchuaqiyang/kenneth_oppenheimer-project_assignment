@@ -21,7 +21,7 @@ Verify Initial Dispensing Of Cash When There Is Amount To Be Dispensed
     Get Number Of Heroes
 
      IF    ${number_of_users} == ${0}
-          Skip
+          Fail
         Log To Console    hsdfihoasfhiosafhoads 
         Click On Dispense Now Button
         Sleep    5s

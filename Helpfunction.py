@@ -1,5 +1,6 @@
 import os
 import requests
+import csv
 
 def curl_get_user():
     headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
@@ -79,5 +80,43 @@ def check_success_response(response):
     
     return False
 
+def create_national_id(number_of_people):
+    unprocessed_id = str(number_of_people)
+    if len(unprocessed_id)==1:
+        return "000"+unprocessed_id
+    if len(unprocessed_id)==2:
+        return "00"+unprocessed_id
+    if len(unprocessed_id)==3:
+        return "0"+unprocessed_id
+    return unprocessed_id
+
 def check_two_national_id(id1, id2):
     return id1==id2
+
+def create_csv_file_by_requirement(number_of_people, birthday, gender, is_random_salary_tax, fixed_salary, fixed_tax):
+    fileName = "uploadFile.csv"
+    filePath = "./Csv" 
+    current_number_of_people = get_number_of_users()
+    nat_id_list = []
+    for i in range (number_of_people):
+        nat_id_list.append(create_national_id(current_number_of_people+i))
+    
+    path = os.path.join(filePath, fileName)
+    if is_random_salary_tax==False:
+        with open(path, "w") as csvFile:
+            fieldnames = ['birthday', 'gender', 'name', 'natid', 'salary', 'tax']
+            writer = csv.DictWriter(csvFile, fieldnames=fieldnames)
+
+            writer.writeheader()
+            for id in nat_id_list:
+                writer.writerow({'birthday':birthday, 'gender':gender, 'name':'test1'+id, 'natid':id, 'salary':fixed_salary, 'tax':fixed_tax})
+    return nat_id_list
+
+
+def create_single_zero_requiremenet_csv():
+    nat_id_list=create_csv_file_by_requirement(1, '01012018', 'm', False, '0','0')
+    return nat_id_list
+
+def create_two_zero_requiremenet_csv():
+    nat_id_list=create_csv_file_by_requirement(2, '01012018', 'm', False, '0','0')
+    return nat_id_list

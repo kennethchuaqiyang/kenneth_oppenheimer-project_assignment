@@ -13,19 +13,17 @@ ${initial_rows}
 ${init_text}
 
 *** Test Cases ***
-Verify Valid Upload Of One Person ID 0000 With Zero Relief By Setting Tax And Salary To Zero Via FrontEnd
+Verify Valid Upload Of One Hero With Zero Relief By Setting Tax And Salary To Zero Via FrontEnd
     [Documentation]  This test case verifies the initial settings for the table for The Oppenheimer Project
     [Tags]  Initial
     # Open Website The Oppenheimer Project
 
     # Get Number Of Heroes
-    # ${initial_number_of_heroes}    Set Variable    ${number_of_users}
     Set Initial Number Of Heroes
-    
-    # Log To Console    yadadadadda
-    # Log To Console    ${initial_number_of_heroes}
+    @{nat_id_list}=    Helpfunction.create_single_zero_requiremenet_csv
+    Set Global Variable    @{nat_id_list}
 
-    ${filename}  Evaluate  ${FE_Zero_Relief_1_Person_Check}    
+    ${filename}  Evaluate  ${UploadFile}    
     Set Global Variable    ${filename}
     Sending Files Through FE
 
@@ -35,23 +33,22 @@ Verify Valid Upload Of One Person ID 0000 With Zero Relief By Setting Tax And Sa
     Reload Page
     Set Subsequent Number Of Heroes
 
-    # Log To Console    yadadadadda
-    # Log To Console    ${subsequent_number_of_heroes}
-
     #should not be the same
     ${difference} =    Evaluate    ${subsequent_number_of_heroes}-${initial_number_of_heroes}
     IF    ${difference} != ${1}
         Fail
     END
-    #Check for column
-    ${national_id}    Set Variable    0000
-    Set Global Variable    ${national_id}
-    Check For Valid Added National ID
-
+    Check NatIds Exist in Table
+    # FOR    ${nat_id}    IN    @{nat_id_list}
+    #     ${national_id}    Set Variable    ${nat_id}
+    #     Set Global Variable    ${national_id}
+    #     Check For Valid Added National ID
+        
+    # END
     # ${log entries}=    Get Browser Console Log Entries    
     # Log    ${log entries}
 
-Verify Valid Upload Of One Person ID 0001 With Zero Relief By Setting Tax And Salary To Zero Via API call
+Verify Valid Upload Of One Hero With Zero Relief By Setting Tax And Salary To Zero Via API call
     [Documentation]  This test case verifies the initial settings for the table for The Oppenheimer Project
     [Tags]  Initial
     # Open Website The Oppenheimer Project
@@ -59,11 +56,11 @@ Verify Valid Upload Of One Person ID 0001 With Zero Relief By Setting Tax And Sa
     # Get Number Of Heroes
     # ${initial_number_of_heroes}    Set Variable    ${number_of_users}
     Set Initial Number Of Heroes
-    
+    @{nat_id_list}=    Helpfunction.create_single_zero_requiremenet_csv
+    Set Global Variable    @{nat_id_list}
 
 
-
-    ${response} =    Helpfunction.post_file_api    ${API_Zero_Relief_1_Person_Check}
+    ${response} =    Helpfunction.post_file_api    ${UploadFile}
     ${check_response} =    Helpfunction.check_success_response    ${response}
     
     IF    ${check_response} == ${False}
@@ -82,15 +79,13 @@ Verify Valid Upload Of One Person ID 0001 With Zero Relief By Setting Tax And Sa
         Fail
     END
     #Check for column
-    ${national_id}    Set Variable    0001
-    Set Global Variable    ${national_id}
-    Check For Valid Added National ID
+    Check NatIds Exist in Table
 
     # ${log entries}=    Get Browser Console Log Entries    
     # Log    ${log entries}
 
 
-Verify Valid Upload Of Two Person ID 0003 And 0004 With Zero Relief By Setting Tax And Salary To Zero Via FrontEnd
+Verify Valid Upload Of Two Heroes With Zero Relief By Setting Tax And Salary To Zero Via FrontEnd
     [Documentation]  This test case verifies the initial settings for the table for The Oppenheimer Project
     [Tags]  Initial
     # Open Website The Oppenheimer Project
@@ -99,10 +94,11 @@ Verify Valid Upload Of Two Person ID 0003 And 0004 With Zero Relief By Setting T
     # ${initial_number_of_heroes}    Set Variable    ${number_of_users}
     Set Initial Number Of Heroes
     
-    # Log To Console    yadadadadda
-    # Log To Console    ${initial_number_of_heroes}
+    @{nat_id_list}=    Helpfunction.create_two_zero_requiremenet_csv
+    Set Global Variable    @{nat_id_list}
 
-    ${filename}  Evaluate  ${FE_Zero_Relief_2_Person_Check}    
+
+    ${filename}  Evaluate  ${UploadFile}    
     Set Global Variable    ${filename}
     Sending Files Through FE
 
@@ -121,18 +117,12 @@ Verify Valid Upload Of Two Person ID 0003 And 0004 With Zero Relief By Setting T
         Fail
     END
     #Check for column
-    ${national_id}    Set Variable    0003
-    Set Global Variable    ${national_id}
-    Check For Valid Added National ID
-
-    ${national_id}    Set Variable    0004
-    Set Global Variable    ${national_id}
-    Check For Valid Added National ID
+    Check NatIds Exist in Table
 
     # ${log entries}=    Get Browser Console Log Entries    
     # Log    ${log entries}
 
-Verify Valid Upload Of Two Person ID 0005 And 0006 With Zero Relief By Setting Tax And Salary To Zero Via API call
+Verify Valid Upload Of Two Heroes With Zero Relief By Setting Tax And Salary To Zero Via API call
     [Documentation]  This test case verifies the initial settings for the table for The Oppenheimer Project
     [Tags]  Initial
     # Open Website The Oppenheimer Project
@@ -140,11 +130,13 @@ Verify Valid Upload Of Two Person ID 0005 And 0006 With Zero Relief By Setting T
     # Get Number Of Heroes
     # ${initial_number_of_heroes}    Set Variable    ${number_of_users}
     Set Initial Number Of Heroes
-    
+
+    @{nat_id_list}=    Helpfunction.create_two_zero_requiremenet_csv
+    Set Global Variable    @{nat_id_list}
 
 
 
-    ${response} =    Helpfunction.post_file_api    ${API_Zero_Relief_2_Person_Check}
+    ${response} =    Helpfunction.post_file_api    ${UploadFile}
     ${check_response} =    Helpfunction.check_success_response    ${response}
     
     IF    ${check_response} == ${False}
@@ -163,11 +155,7 @@ Verify Valid Upload Of Two Person ID 0005 And 0006 With Zero Relief By Setting T
         Fail
     END
     #Check for column
-    ${national_id}    Set Variable    0005
-    Set Global Variable    ${national_id}
-    Check For Valid Added National ID
-    ${national_id}    Set Variable    0006
-    Set Global Variable    ${national_id}
-    Check For Valid Added National ID
+    Check NatIds Exist in Table
+
     # ${log entries}=    Get Browser Console Log Entries    
     # Log    ${log entries}
