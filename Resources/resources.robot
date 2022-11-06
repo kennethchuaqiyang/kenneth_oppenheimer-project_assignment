@@ -20,6 +20,7 @@ ${subsequent_number_of_heroes}
 ${filename}
 ${national_id}
 @{nat_id_list}
+${hero_relief_from_table}
 ${UploadFile}    r"/uploadFile.csv"
 ${FE_Zero_Relief_1_Person_Check}    r"/Zero_Relief_1_person_FE_Clark_check.csv"
 ${API_Zero_Relief_1_Person_Check}    r"/Zero_Relief_1_person_API_Clark_check.csv"
@@ -158,3 +159,15 @@ Check NatIds Exist in Table
         Check For Valid Added National ID
         
     END
+
+Get Hero Relief From Table
+    FOR    ${index}    IN RANGE    1    ${subsequent_number_of_heroes}+1
+        ${natid_from_FE_Table} =    Get Text    xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[1]
+        ${check_id_match} =    Helpfunction.check_two_national_id  ${national_id}  ${natid_from_FE_Table}
+        IF    ${check_id_match} 
+            Log To Console    ${index}
+            ${hero_relief_from_table} =    Get Text    xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]
+        END
+ 
+    END
+    Set Global Variable    ${hero_relief_from_table}
