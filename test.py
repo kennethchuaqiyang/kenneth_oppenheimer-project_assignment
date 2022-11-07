@@ -22,10 +22,16 @@ import random
 
 #     writer.writeheader()
 #     writer.writerow({'birthday':'01012018', 'gender':'m', 'name':'test1', 'natid':'0005', 'salary':'0.1', 'tax':'0'})
-a = "abcdefgh"
-if len(a)>4:
-    create_a = a[0:4]
-    for i in range(0, len(a)-4):
-        create_a= create_a + '*'
-a = create_a
-print (a)
+# a = "abcdefgh"
+# if len(a)>4:
+#     create_a = a[0:4]
+#     for i in range(0, len(a)-4):
+#         create_a= create_a + '*'
+# a = create_a
+# print (a)
+# birthday= str(random.randint(1982, 2018))+str(random.randint(10, 12))+str(random.randint(10, 28))
+# print(birthday)
+# gender = random.choice(["m","f"])
+# print(gender)
+# hope=str(round(random.uniform(1000, 2000.66), 2))
+# print(hope)

@@ -1,6 +1,7 @@
 import os
 import requests
 import csv
+import random
 
 def curl_get_user():
     headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
@@ -117,6 +118,19 @@ def create_csv_file_by_requirement(number_of_people, birthday, gender, is_random
             writer.writeheader()
             for id in nat_id_list:
                 writer.writerow({'birthday':birthday, 'gender':gender, 'name':'test1'+id, 'natid':id, 'salary':fixed_salary, 'tax':fixed_tax})
+    else:
+        with open(path, "w") as csvFile:
+            fieldnames = ['birthday', 'gender', 'name', 'natid', 'salary', 'tax']
+            writer = csv.DictWriter(csvFile, fieldnames=fieldnames)
+
+            writer.writeheader()
+            for id in nat_id_list:
+                birthday= str(random.randint(10, 28))+str(random.randint(10, 12))+str(random.randint(1982, 2018))
+                gender = random.choice(["m","f"])
+                fixed_salary=str(round(random.uniform(2000, 8000.66), 2))
+                fixed_tax=str(round(random.uniform(200, 800.66), 2))
+                writer.writerow({'birthday':birthday, 'gender':gender, 'name':'test1'+id, 'natid':id, 'salary':fixed_salary, 'tax':fixed_tax})        
+
     return nat_id_list
 
 def create_csv_file_by_requirement_default_name(number_of_people, birthday, gender, is_random_salary_tax, fixed_salary, fixed_tax, name):
@@ -323,6 +337,10 @@ def create_single_zero_requiremenet_csv():
 
 def create_single_full_details_requiremenet_csv():
     nat_id_list=create_csv_file_by_requirement(1, '01012018', 'm', False, '1000','100')
+    return nat_id_list
+
+def create_mass_full_details_requirement_csv():
+    nat_id_list=create_csv_file_by_requirement(50, '01012018', 'm', True, '1000','100')
     return nat_id_list
 
 def create_single_full_details_requiremenet_big_M_csv():

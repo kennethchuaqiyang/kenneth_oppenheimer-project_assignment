@@ -1221,7 +1221,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
 
 
 #TBC: NATid variation, Jumble, multiple (2 and many)
-Verify Clerk Can Process Invalid Upload Csv File With Jumbled Column Via FrontEnd
+Verify Clerk Can Process valid Upload Csv File With Jumbled Column Via FrontEnd
     [Documentation]  This test case verifies the initial settings for the table for The Oppenheimer Project
     [Tags]  Initial
     # Open Website The Oppenheimer Project
@@ -1251,7 +1251,7 @@ Verify Clerk Can Process Invalid Upload Csv File With Jumbled Column Via FrontEn
 
 #To edit jumbled since it is valid
 
-Verify Clerk Cannot Process Valid Upload CSV With Jumbled Column Via API Call Causing 500 Error Code
+Verify Clerk Can Process Valid Upload CSV With Jumbled Column Via API Call Causing 500 Error Code
     [Documentation]  This test case verifies the initial settings for the table for The Oppenheimer Project
     [Tags]  Initial
     
@@ -1288,3 +1288,37 @@ Verify Clerk Cannot Process Valid Upload CSV With Jumbled Column Via API Call Ca
 
     Check NatIds Exist in Table
 
+
+Verify Clerk Can Process Mass Entry Of 50 Heroes With Valid Entries
+
+    [Documentation]  This test case verifies the initial settings for the table for The Oppenheimer Project
+    [Tags]  Initial
+    # Open Website The Oppenheimer Project
+
+    # Get Number Of Heroes
+    # ${initial_number_of_heroes}    Set Variable    ${number_of_users}
+    Set Initial Number Of Heroes
+    @{nat_id_list}=    Helpfunction.create_mass_full_details_requirement_csv
+    Set Global Variable    @{nat_id_list}
+
+
+    ${response} =    Helpfunction.post_file_api    ${UploadFile}
+    ${check_response} =    Helpfunction.check_success_response    ${response}
+    
+    IF    ${check_response} == ${False}
+        Fail
+    END
+    #check eventual number
+    Sleep    2s     
+    
+    Reload Page
+    Set Subsequent Number Of Heroes
+
+
+    #should not be the same
+    ${difference} =    Evaluate    ${subsequent_number_of_heroes}-${initial_number_of_heroes}
+    IF    ${difference} != ${50}
+        Fail
+    END
+    #Check for column
+    # Check NatIds Exist in Table
