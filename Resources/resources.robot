@@ -22,6 +22,8 @@ ${national_id}
 @{nat_id_list}
 ${hero_relief_from_table}
 ${UploadFile}    r"/uploadFile.csv"
+${Invalid_Non_CSV_Excel_File}    r"/invalidNonCsvExcel.xlsx"
+${Non_Existing_CSV}    r"/non_existing_check.csv"
 ${FE_Zero_Relief_1_Person_Check}    r"/Zero_Relief_1_person_FE_Clark_check.csv"
 ${API_Zero_Relief_1_Person_Check}    r"/Zero_Relief_1_person_API_Clark_check.csv"
 ${FE_Zero_Relief_2_Person_Check}    r"/Zero_Relief_2_person_FE_Clark_check.csv"
@@ -145,6 +147,26 @@ Check For Valid Added National ID
     Wait Until Element Is Visible    xpath://*[@id="contents"]
 
     Table Column Should Contain    xpath://*[@id="contents"]    1    ${national_id}
+
+Check For Non Valid Not Added National ID
+    Log To Console    Entering to check non valid
+    Log To Console    ${national_id}
+    Wait Until Element Is Visible    xpath://*[@id="contents"]
+
+    ${non_exist}    Set Variable    ${True}
+        
+    FOR    ${index}    IN RANGE    1    ${subsequent_number_of_heroes}+1
+        ${natid_from_FE_Table} =    Get Text    xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[1]
+        ${check_id_match} =    Helpfunction.check_two_national_id  ${national_id}  ${natid_from_FE_Table}
+        IF    ${check_id_match} 
+            Log To Console    ${index}
+            ${non_exist}    Set Variable    ${False}
+        END
+ 
+    END
+    IF    ${non_exist} == ${False}
+        Fail
+    END
 
 Get Browser Console Log Entries
     ${selenium}=    Get Library Instance    SeleniumLibrary

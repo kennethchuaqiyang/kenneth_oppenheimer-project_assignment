@@ -27,3 +27,4 @@ Verify Governor Can Dispense Cash Even when There Is Zero Relief
         Sleep    5s
         Wait Until Element Is Visible    xpath://*[@id="app"]/div/main/div/div/div
         Element Text Should Be    xpath://*[@id="app"]/div/main/div/div/div    Cash dispensed
+        Open Website The Oppenheimer Project

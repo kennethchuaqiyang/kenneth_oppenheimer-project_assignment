@@ -39,14 +39,6 @@ Verify Valid Upload Of One Hero With Zero Relief By Setting Tax And Salary To Ze
         Fail
     END
     Check NatIds Exist in Table
-    # FOR    ${nat_id}    IN    @{nat_id_list}
-    #     ${national_id}    Set Variable    ${nat_id}
-    #     Set Global Variable    ${national_id}
-    #     Check For Valid Added National ID
-        
-    # END
-    # ${log entries}=    Get Browser Console Log Entries    
-    # Log    ${log entries}
 
 Verify Valid Upload Of One Hero With Zero Relief By Setting Tax And Salary To Zero Via API call
     [Documentation]  This test case verifies the initial settings for the table for The Oppenheimer Project
