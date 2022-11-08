@@ -12,6 +12,7 @@ ${initial_rows}
 ${init_text}
 
 *** Test Cases ***
+
 Verify Valid Upload Of One Hero With Zero Relief By Setting Tax And Salary To Zero Via FrontEnd
     [Documentation]  This test case verifies the initial settings for the table for The Oppenheimer Project
     [Tags]  Initial

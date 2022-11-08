@@ -12,6 +12,7 @@ ${initial_rows}
 ${init_text}
 
 *** Test Cases ***
+
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
     [Documentation]  This test case verifies clerk can upload heroes for gender m using small caps using FE file upload.

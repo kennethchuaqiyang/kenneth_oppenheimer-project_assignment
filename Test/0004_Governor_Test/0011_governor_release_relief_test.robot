@@ -28,6 +28,7 @@ Verify Governor Can Dispense Cash When There Is Heroes
     END
     
     Click On Dispense Now Button
+    
     Sleep    5s
     
     Wait Until Element Is Visible    xpath://*[@id="app"]/div/main/div/div/div

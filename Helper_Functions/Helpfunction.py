@@ -123,7 +123,7 @@ def check_success_response(response):
 
 #Check Unsucussful API Call
 def check_non_success_response(response):
-    print(response[1])
+
     if '500' in str(response[1]):
         return True
     return False
