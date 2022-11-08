@@ -123,7 +123,7 @@ def check_success_response(response):
 
 #Check Unsucussful API Call
 def check_non_success_response(response):
-
+    print(response[1])
     if '500' in str(response[1]):
         return True
     return False
@@ -476,6 +476,12 @@ def create_single_full_details_higher_tax_requiremenet_csv():
     nat_id_list=create_csv_file_by_requirement(1, '01012018', 'm', False, '100','1000')
     return nat_id_list
 
+#Create Hero With Equal Tax
+def create_single_full_details_equal_tax_requiremenet_csv():
+
+    nat_id_list=create_csv_file_by_requirement(1, '01012018', 'm', False, '1000','1000')
+    return nat_id_list
+
 #Create Heroes With Alphbet Name
 def create_name_with_letters_csv():
 
@@ -724,6 +730,6 @@ def create_duplicated_ids_csv():
 
 #Create No Relief
 def create_hero_for_invalid_entry_no_relief_calculation():
-    
+
     nat_id_list=create_invalid_csv_file_excluding_nat_id_by_requirement(1, '1-Jan-2018', 'm', False, '0','0', '9996')
     return nat_id_list
