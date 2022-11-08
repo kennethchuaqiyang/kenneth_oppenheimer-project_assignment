@@ -22,16 +22,18 @@ Verify Governor Can Dispense Cash When There Is Heroes
     Set Initial Number Of Heroes
 
     IF    ${initial_number_of_heroes} == ${0}
-    
+        Log    Avoid when there are no heroes as this is not a valid case
         Skip
     
     END
     
     Click On Dispense Now Button
-    
+
     Sleep    5s
     
     Wait Until Element Is Visible    xpath://*[@id="app"]/div/main/div/div/div
     
     Element Text Should Be    xpath://*[@id="app"]/div/main/div/div/div    Cash dispensed
+    Pass Execution    Verified Governor Can Dispense Cash When There Is Heroes
+
     

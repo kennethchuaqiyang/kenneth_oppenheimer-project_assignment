@@ -32,5 +32,6 @@ Verify Governor Can Dispense Cash Even when There Is Zero Relief
 
         Wait Until Element Is Visible    xpath://*[@id="app"]/div/main/div/div/div
         Element Text Should Be    xpath://*[@id="app"]/div/main/div/div/div    Cash dispensed
-        
+
+        Log    Verified Governor Can Dispense Cash Even when There Is Zero Relief
         Open Website The Oppenheimer Project

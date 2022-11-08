@@ -60,6 +60,7 @@ Verify Clerk Cannot Upload Non Existing Csv Via API Call Causing 500 Error Code
 
     ${log entries}=    Get Browser Console Log Entries    
     Log    ${log entries}
+    Pass Execution    Verified Clerk Cannot Upload Non Existing Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Upload Invalid File Type Excel Non Csv Via FrontEnd
 
@@ -92,6 +93,7 @@ Verify Clerk Cannot Upload Invalid File Type Excel Non Csv Via FrontEnd
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Upload Invalid File Type Excel Non Csv Via FrontEnd
 
 Verify Clerk Cannot Upload Invalid File Type Excel Non Csv Via API Call Causing 500 Error Code
 
@@ -127,6 +129,7 @@ Verify Clerk Cannot Upload Invalid File Type Excel Non Csv Via API Call Causing 
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Upload Invalid File Type Excel Non Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With No Header Csv Via FrontEnd
 
@@ -162,6 +165,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With No Header Csv Via Fr
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With No Header Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With No Header Csv Via API Call Causing 500 Error Code
  
@@ -201,6 +205,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With No Header Csv Via AP
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With No Header Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With No Birthday Csv Via FrontEnd
 
@@ -236,6 +241,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With No Birthday Csv Via 
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With No Birthday Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With No Birthday Csv Via API Call Causing 500 Error Code
  
@@ -275,6 +281,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With No Birthday Csv Via 
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With No Birthday Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid Birthday DDMMMYYYY Csv Via FrontEnd
 
@@ -311,6 +318,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid Birthday DDM
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Invalid Birthday DDMMMYYYY Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid Birthday DDMMMYYYY Csv Via API Call Causing 500 Error Code
 
@@ -350,6 +358,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid Birthday DDM
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Invalid Birthday DDMMMYYYY Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid Birthday YYYYMMDD Csv Via FrontEnd
 
@@ -384,6 +393,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid Birthday YYY
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Invalid Birthday YYYYMMDD Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid Birthday YYYYMMDD Csv Via API Call Causing 500 Error Code
 
@@ -420,6 +430,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid Birthday YYY
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Invalid Birthday YYYYMMDD Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Long Form Gender Csv Via FrontEnd
 
@@ -455,6 +466,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Long Form Gender Csv
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Long Form Gender Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Long Form Gender Csv Via API Call Causing 500 Error Code
 
@@ -495,6 +507,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Long Form Gender Csv
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Long Form Gender Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid Gender Number Format Csv Via FrontEnd
 
@@ -532,6 +545,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid Gender Numbe
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Invalid Gender Number Format Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid Gender Number Format Csv Via API Call Causing 500 Error Code
 
@@ -574,6 +588,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid Gender Numbe
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Invalid Gender Number Format Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With No Salary Input Csv Via FrontEnd
 
@@ -610,6 +625,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With No Salary Input Csv 
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With No Salary Input Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With No Salary Input Csv Via API Call Causing 500 Error Code
 
@@ -649,6 +665,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With No Salary Input Csv 
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With No Salary Input Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Salary Input Format Alphabets Input Csv Via FrontEnd
 
@@ -685,6 +702,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Salary Input F
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Wrong Salary Input Format Alphabets Input Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Salary Input Format Alphabets Csv Via API Call Causing 500 Error Code
 
@@ -724,6 +742,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Salary Input F
     Set Global Variable    ${national_id}
     
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Wrong Salary Input Format Alphabets Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Salary Input Format AlphaNumeric Input Csv Via FrontEnd
 
@@ -760,6 +779,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Salary Input F
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Wrong Salary Input Format AlphaNumeric Input Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Salary Input Format AlphaNumeric Csv Via API Call Causing 500 Error Code
 
@@ -799,6 +819,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Salary Input F
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Wrong Salary Input Format AlphaNumeric Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Negative Salary Input Input Csv Via FrontEnd
 
@@ -836,6 +857,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Negative Salary Inpu
     Set Global Variable    ${national_id}
     
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Negative Salary Input Input Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Negative Salary Csv Via API Call Causing 500 Error Code
 
@@ -876,6 +898,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Negative Salary Csv 
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Negative Salary Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With 5 Decimal Places Salary Input Input Csv Via FrontEnd
 
@@ -912,6 +935,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With 5 Decimal Places Sal
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With 5 Decimal Places Salary Input Input Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With 5 Decimal Places Salary Csv Via API Call Causing 500 Error Code
 
@@ -952,6 +976,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With 5 Decimal Places Sal
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With 5 Decimal Places Salary Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With No Tax Input Csv Via FrontEnd
 
@@ -988,6 +1013,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With No Tax Input Csv Via
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With No Tax Input Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With No Tax Input Csv Via API Call Causing 500 Error Code
 
@@ -1027,6 +1053,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With No Tax Input Csv Via
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With No Tax Input Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Tax Input Format Alphabets Input Csv Via FrontEnd
 
@@ -1063,6 +1090,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Tax Input Form
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Wrong Tax Input Format Alphabets Input Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Tax Input Format Alphabets Csv Via API Call Causing 500 Error Code
 
@@ -1102,6 +1130,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Tax Input Form
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Wrong Tax Input Format Alphabets Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Tax Input Format AlphaNumeric Input Csv Via FrontEnd
 
@@ -1138,6 +1167,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Tax Input Form
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Wrong Tax Input Format AlphaNumeric Input Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Tax Input Format AlphaNumeric Csv Via API Call Causing 500 Error Code
 
@@ -1177,6 +1207,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Wrong Tax Input Form
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Wrong Tax Input Format AlphaNumeric Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Negative Tax Input Input Csv Via FrontEnd
  
@@ -1214,6 +1245,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Negative Tax Input I
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Negative Tax Input Input Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Negative Tax Csv Via API Call Causing 500 Error Code
 
@@ -1255,6 +1287,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Negative Tax Csv Via
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Negative Tax Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With 5 Decimal Places Tax Input Input Csv Via FrontEnd
 
@@ -1292,6 +1325,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With 5 Decimal Places Tax
     Set Global Variable    ${national_id}
     
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With 5 Decimal Places Tax Input Input Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With 5 Decimal Places Tax Csv Via API Call Causing 500 Error Code
 
@@ -1333,7 +1367,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With 5 Decimal Places Tax
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
-
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With 5 Decimal Places Tax Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With No Name Input Csv Via FrontEnd
 
@@ -1370,6 +1404,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With No Name Input Csv Vi
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With No Name Input Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With No Name Csv Via API Call Causing 500 Error Code
 
@@ -1409,6 +1444,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With No Name Csv Via API 
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With No Name Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With No National Id Input Csv Via FrontEnd
 
@@ -1439,6 +1475,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With No National Id Input
         Fail
 
     END
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With No National Id Input Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With No National Id Csv Via API Call Causing 500 Error Code
 
@@ -1472,6 +1509,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With No National Id Csv V
         Fail
 
     END
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With No National Id Csv Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid National Id Format Less Than 4 Character Input Csv Via FrontEnd
 
@@ -1505,6 +1543,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid National Id 
         Fail
 
     END
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Invalid National Id Format Less Than 4 Character Input Csv Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid National Id Format Less Than 4 Character Via API Call Causing 500 Error Code
 
@@ -1541,6 +1580,7 @@ Verify Clerk Cannot Process Invalid Upload Of One Hero With Invalid National Id 
         Fail
 
     END
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Of One Hero With Invalid National Id Format Less Than 4 Character Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Csv File With Empty Rows Via FrontEnd
 
@@ -1577,6 +1617,7 @@ Verify Clerk Cannot Process Invalid Upload Csv File With Empty Rows Via FrontEnd
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Csv File With Empty Rows Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload CSV With Empty Row Via API Call Causing 500 Error Code
 
@@ -1616,7 +1657,7 @@ Verify Clerk Cannot Process Invalid Upload CSV With Empty Row Via API Call Causi
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
-
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload CSV With Empty Row Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Csv File With Empty Column Via FrontEnd
 
@@ -1653,6 +1694,7 @@ Verify Clerk Cannot Process Invalid Upload Csv File With Empty Column Via FrontE
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Csv File With Empty Column Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload CSV With Empty Column Via API Call Causing 500 Error Code
 
@@ -1693,6 +1735,7 @@ Verify Clerk Cannot Process Invalid Upload CSV With Empty Column Via API Call Ca
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload CSV With Empty Column Via API Call Causing 500 Error Code
 
 Verify Clerk Cannot Process Invalid Upload Csv File With Missing Column Via FrontEnd
 
@@ -1729,6 +1772,7 @@ Verify Clerk Cannot Process Invalid Upload Csv File With Missing Column Via Fron
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload Csv File With Missing Column Via FrontEnd
 
 Verify Clerk Cannot Process Invalid Upload CSV With Missing Column Via API Call Causing 500 Error Code
 
@@ -1768,6 +1812,7 @@ Verify Clerk Cannot Process Invalid Upload CSV With Missing Column Via API Call 
     Set Global Variable    ${national_id}
 
     Check For Non Valid Not Added National ID
+    Pass Execution    Verified Clerk Cannot Process Invalid Upload CSV With Missing Column Via API Call Causing 500 Error Code
 
 #Duplicated key
 Verify Clerk Cannot Upload Duplicated Identical Id Via FE
@@ -1815,3 +1860,4 @@ Verify Clerk Cannot Upload Duplicated Identical Id Via FE
         Fail
     
     END
+    Pass Execution    Verified Clerk Cannot Upload Duplicated Identical Id Via FE

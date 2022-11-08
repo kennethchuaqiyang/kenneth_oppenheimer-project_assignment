@@ -47,6 +47,8 @@ Verify Bookkeeper Able To Retrieve One Hero With Zero Relief Upon Entry And Refr
     END
 
     Reload Page
+    Pass Execution    Verified Bookkeeper Able To Retrieve One Hero With Zero Relief Upon Entry And Refresh Tax Relief Table Button
+
 
 Verify Summary Statement Will Be Zero When Previous Sum Is Zero And Added One Hero With Zero Relief After Refresh Tax Button
 
@@ -86,7 +88,8 @@ Verify Summary Statement Will Be Zero When Previous Sum Is Zero And Added One He
     
     IF    ${check_against_price} 
     
-        Pass Execution    Sub Price Sub Test Passed
+        Pass Execution    Verified Summary Statement Will Be Zero When Previous Sum Is Zero And Added One Hero With Zero Relief After Refresh Tax Button
+
     
     ELSE
     

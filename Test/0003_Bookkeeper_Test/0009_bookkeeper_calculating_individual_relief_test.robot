@@ -35,6 +35,7 @@ Verify Bookkeeper Not Able To Retrieve Invalid Entry of Heroes For Calculation
         Fail
 
     END
+    Pass Execution    Verified Bookkeeper Not Able To Retrieve Invalid Entry of Heroes For Calculation
 
 Verify Bookkeeper Able To Retrieve Heroes Where Salary Is More Than Tax After Clicking Refresh Button For Calculation And Display Of Relief
 
@@ -71,7 +72,7 @@ Verify Bookkeeper Able To Retrieve Heroes Where Salary Is More Than Tax After Cl
     END
 
     Reload Page
-
+    Pass Execution    Verified Bookkeeper Able To Retrieve Heroes Where Salary Is More Than Tax After Clicking Refresh Button For Calculation And Display Of Relief
 
 Verify Bookkeeper Able To Retrieve Heroes Where Tax Is More Than Salary After Clicking Refresh Button For Calculation And Display Of Relief
    [Documentation]  This test ensure relief can be calculated and table will show when a hero with salary less than tax is added
@@ -107,6 +108,7 @@ Verify Bookkeeper Able To Retrieve Heroes Where Tax Is More Than Salary After Cl
     END
     
     Reload Page
+    Pass Execution    Verified Bookkeeper Able To Retrieve Heroes Where Tax Is More Than Salary After Clicking Refresh Button For Calculation And Display Of Relief
 
 Verify Bookkeeper Able To Retrieve Heroes Where Tax Is Equal Salary After Clicking Refresh Button For Calculation And Display Of Relief
 
@@ -142,7 +144,7 @@ Verify Bookkeeper Able To Retrieve Heroes Where Tax Is Equal Salary After Clicki
     END
     
     Reload Page
-
+    Pass Execution    Verified Bookkeeper Able To Retrieve Heroes Where Tax Is Equal Salary After Clicking Refresh Button For Calculation And Display Of Relief
 
 Verify Bookkeeper Able To Retrieve More Than 1 Hero After Clicking Refresh Button To Calculate And Display Individual Relief
 
@@ -189,3 +191,4 @@ Verify Bookkeeper Able To Retrieve More Than 1 Hero After Clicking Refresh Butto
     END
 
     Reload Page
+    Pass Execution    Verified Bookkeeper Able To Retrieve More Than 1 Hero After Clicking Refresh Button To Calculate And Display Individual Relief

@@ -217,7 +217,7 @@ Get Hero Relief From Table
 
     Set Global Variable    ${hero_relief_from_table}
 
-Calculate Specific Heroes Hero Relieft From Table
+Calculate Specific Heroes Hero Relief From Table
 
     ${total_hero_relief_calculation}    Set Variable    ${0}
 

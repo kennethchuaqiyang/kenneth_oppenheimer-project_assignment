@@ -43,6 +43,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
     
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
     
@@ -77,6 +78,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Big Cap Gender M Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -108,6 +110,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Big Cap Gender M V
     END
     
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Big Cap Gender M Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Big Cap Gender M Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -142,6 +145,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Big Cap Gender M V
     END
 
     Check NatIds Exist in Table   
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Big Cap Gender M Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender f Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -173,6 +177,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender f
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender f Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender f Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -208,6 +213,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender f
     END
 
     Check NatIds Exist in Table   
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender f Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Big Cap Gender F Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -239,6 +245,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Big Cap Gender F V
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Big Cap Gender F Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Big Cap Gender F Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -273,6 +280,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Big Cap Gender F V
     END
 
     Check NatIds Exist in Table  
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Big Cap Gender F Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday No Gender Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -307,6 +315,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday No Gender Valid Normal A
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday No Gender Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday No Gender Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -345,7 +354,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday No Gender Valid Normal A
     END
 
     Check NatIds Exist in Table  
-
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday No Gender Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Chinese Gender Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -377,6 +386,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Chinese Gender Valid Nor
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Chinese Gender Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Chinese Gender Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -406,6 +416,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Chinese Gender Valid Nor
     END
 
     Check NatIds Exist in Table  
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Chinese Gender Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Salary Valid Higher Tax Via FrontEnd
 
@@ -437,6 +448,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Salary Valid Higher Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Salary Valid Higher Tax Via Api Call
 
@@ -471,6 +483,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Salary Valid Higher Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -502,6 +515,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
     
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -536,6 +550,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Alphabet Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Number Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -567,6 +582,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Number Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Number Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -601,6 +617,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Number Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Alphanumeric Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -632,6 +649,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Alphanumeric Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Alphanumeric Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -666,6 +684,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Alphanumeric Name Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name With Space Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -697,6 +716,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name With Space Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name With Space Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -731,6 +751,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name With Space Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name With Special Character Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -762,6 +783,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name With Special Character Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name With Special Character Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -796,6 +818,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name With Special Character Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name With Chinese Character Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -827,6 +850,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name With Chinese Character Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name With Chinese Character Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -861,6 +885,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name With Chinese Character Valid Normal Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -892,6 +917,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -926,6 +952,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full Numerical 4 Digit NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Alphabet Character NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -957,6 +984,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Alphabet Character NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Alphabet Character NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -991,6 +1019,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Alphabet Character NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 AlphaNumeric Character NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -1022,6 +1051,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 AlphaNumeric Character NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Alphanumeric Character NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -1056,6 +1086,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Alphanumeric Character NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Character With Space NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -1087,6 +1118,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Character With Space NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Character With Space NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -1121,6 +1153,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Character With Space NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Special Character NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -1152,6 +1185,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Special Character NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Special Character NatId Valid Higher Salary Valid Tax Via Api Call
  
@@ -1186,6 +1220,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Special Character NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Chinese Character NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -1217,6 +1252,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Chinese Character NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Chinese Character NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -1251,6 +1287,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 4 Chinese Character NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 9 Alphanumeric Character NatId Valid Higher Salary Valid Tax Via FrontEnd
 
@@ -1282,6 +1319,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 9 Alphanumeric Character NatId Valid Higher Salary Valid Tax Via FrontEnd
 
 Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 9 Alphanumeric Character NatId Valid Higher Salary Valid Tax Via Api Call
 
@@ -1316,6 +1354,7 @@ Verify Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m
     END
 
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Upload Of One Hero With Valid Birthday Valid Small Cap Gender m Valid Normal Full Name Valid Normal Full 9 Alphanumeric Character NatId Valid Higher Salary Valid Tax Via Api Call
 
 Verify Clerk Can Process valid Upload Csv File With Jumbled Column Via FrontEnd
 
@@ -1348,6 +1387,7 @@ Verify Clerk Can Process valid Upload Csv File With Jumbled Column Via FrontEnd
     END
     
     Check NatIds Exist in Table
+    Pass Execution    Verified Clerk Can Process valid Upload Csv File With Jumbled Column Via FrontEnd
 
 Verify Clerk Can Process Valid Upload CSV With Jumbled Column Via API Call
 
@@ -1380,7 +1420,7 @@ Verify Clerk Can Process Valid Upload CSV With Jumbled Column Via API Call
     END
 
     Check NatIds Exist in Table
-
+    Pass Execution    Verified Clerk Can Process Valid Upload CSV With Jumbled Column Via API Call
 
 Verify Clerk Can Process Mass Entry Of 50 Heroes With Valid Entries
 
@@ -1414,6 +1454,7 @@ Verify Clerk Can Process Mass Entry Of 50 Heroes With Valid Entries
         Fail
 
     END
+    Pass Execution    Verify Clerk Can Process Mass Entry Of 50 Heroes With Valid Entries
 
 Verify Clerk Can Process Valid Upload Of Zero Hero Via FrontEnd
 
@@ -1443,6 +1484,7 @@ Verify Clerk Can Process Valid Upload Of Zero Hero Via FrontEnd
         Fail
 
     END
+    Pass Execution    Verified Clerk Can Process Valid Upload Of Zero Hero Via FrontEnd
 
 Verify Clerk Can Process valid Upload Of Zero Hero Via API Call
 
@@ -1476,6 +1518,7 @@ Verify Clerk Can Process valid Upload Of Zero Hero Via API Call
         Fail
 
     END
+    Pass Execution    Verified Clerk Can Process valid Upload Of Zero Hero Via API Call
 
 Verify Clerk Cann Process Empty Csv Via FrontEnd
 
@@ -1505,6 +1548,7 @@ Verify Clerk Cann Process Empty Csv Via FrontEnd
         Fail
 
     END
+    Pass Execution    Verified Clerk Cann Process Empty Csv Via FrontEnd
 
 Verify Clerk Can Process Empty Csv Via API Call
 
@@ -1539,3 +1583,4 @@ Verify Clerk Can Process Empty Csv Via API Call
         Fail
 
     END
+    Pass Execution    Verify Clerk Can Process Empty Csv Via API Call

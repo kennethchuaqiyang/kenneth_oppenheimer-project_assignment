@@ -47,7 +47,7 @@ Verify Bookkeeper Can Match Total From DB Table and Summary Statement Matches Be
     END
 
     Reload Page
-
+    Pass Execution    Verified Bookkeeper Can Match Total From DB Table and Summary Statement Matches Before Adding Any New Heroes
 
 Verify Bookkeeper Can Match Total From DB Table and Summary Statement Matches After Unsuccessful In Adding 1 Heroes
  
@@ -94,7 +94,7 @@ Verify Bookkeeper Can Match Total From DB Table and Summary Statement Matches Af
     END
 
     Reload Page
-
+    Pass Execution    Verified Bookkeeper Can Match Total From DB Table and Summary Statement Matches After Unsuccessful In Adding 1 Heroes
 
 Verify Bookkeeper Can Match Total From DB Table and Summary Statement Matches After Adding 1 Heroes
      
@@ -162,7 +162,7 @@ Verify Bookkeeper Can Match Total From DB Table and Summary Statement Matches Af
     END
 
     Reload Page
-
+    Pass Execution    Verified Bookkeeper Can Match Total From DB Table and Summary Statement Matches After Adding 1 Heroes
 
 Verify Bookkeeper Able To Calculate Sum More Than 1 Hero Added After Clicking Refresh Button Where Db And Table Appendment Sum Matches
 
@@ -204,10 +204,10 @@ Verify Bookkeeper Able To Calculate Sum More Than 1 Hero Added After Clicking Re
 
     ${round_total_db_calculation} =    Helpfunction.round_to_2_dp    ${total_db_calculation}
 
-    Calculate Specific Heroes Hero Relieft From Table
+    Calculate Specific Heroes Hero Relief From Table
 
     ${round_total_table_calculation} =    Helpfunction.round_to_2_dp    ${total_hero_relief_calculation}
-    
+
     IF    ${round_total_db_calculation} != ${round_total_table_calculation}
 
          Fail
@@ -227,3 +227,4 @@ Verify Bookkeeper Able To Calculate Sum More Than 1 Hero Added After Clicking Re
     END
 
     Reload Page
+    Pass Execution    Verified Bookkeeper Able To Calculate Sum More Than 1 Hero Added After Clicking Refresh Button Where Db And Table Appendment Sum Matches
