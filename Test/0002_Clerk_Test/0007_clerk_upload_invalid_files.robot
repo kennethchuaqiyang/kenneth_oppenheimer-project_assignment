@@ -1713,11 +1713,12 @@ Verify Clerk Cannot Process Invalid Upload Csv File With Missing Column Via Fron
     IF    ${difference} != ${0}
         Fail
     END
-    ${national_id}    Set Variable    9979
+    ${national_id}    Set Variable    9977
     Set Global Variable    ${national_id}
     Check For Non Valid Not Added National ID
 
 Verify Clerk Cannot Process Invalid Upload CSV With Missing Column Via API Call Causing 500 Error Code
+
     [Documentation]  This test case verifies the initial settings for the table for The Oppenheimer Project
     [Tags]  Initial
     # Open Website The Oppenheimer Project
@@ -1750,11 +1751,46 @@ Verify Clerk Cannot Process Invalid Upload CSV With Missing Column Via API Call 
         Fail
     END
     #Check for column
-    ${national_id}    Set Variable    9979
+    ${national_id}    Set Variable    9977
     Set Global Variable    ${national_id}
     Check For Non Valid Not Added National ID
 
-#Skip One Row
-#Skip One Column
-#Jumbled Column
-#1 valid and 1 invalid
+#Duplicated key
+Verify Clerk Cannot Upload Duplicated Identical Id Via FE
+    [Documentation]  This test case verifies the initial settings for the table for The Oppenheimer Project
+    [Tags]  Initial
+    # Open Website The Oppenheimer Project
+
+    # Get Number Of Heroes
+    Set Initial Number Of Heroes
+    @{nat_id_list}=    Helpfunction.create_duplicated_ids_csv
+    Set Global Variable    @{nat_id_list}
+
+    ${filename}  Evaluate  ${UploadFile}    
+    Set Global Variable    ${filename}
+    Sending Files Through FE
+
+    #check eventual number
+    Sleep    2s     
+    
+    Reload Page
+    Set Subsequent Number Of Heroes
+
+    #should not be the same
+    ${difference} =    Evaluate    ${subsequent_number_of_heroes}-${initial_number_of_heroes}
+    IF    ${difference} != ${1}
+        Fail
+    END
+    Sending Files Through FE
+
+    #check eventual number
+    Sleep    2s     
+    
+    Reload Page
+    Set Subsequent Number Of Heroes
+
+    #should not reload
+    ${difference} =    Evaluate    ${subsequent_number_of_heroes}-${initial_number_of_heroes}
+    IF    ${difference} != ${0}
+        Fail
+    END

@@ -1,0 +1,3 @@
+PATH=`pwd`:$PATH
+export PATH
+robot -d qa_testing ./Test/0003_Bookkeeper_Test

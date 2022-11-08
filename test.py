@@ -35,3 +35,15 @@ import random
 # print(gender)
 # hope=str(round(random.uniform(1000, 2000.66), 2))
 # print(hope)
+
+# headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+# response = requests.get('http://localhost:8080/calculator/taxRelief', headers=headers)
+# returned_json = response.json()
+# heroes  =returned_json
+# total_specific_relief = 0
+# for hero in heroes:
+#     for nat_id in nat_ids:
+#         if hero["natid"]==nat_id:
+#             print(hero["relief"])
+#             total_specific_relief= total_specific_relief+ float(hero["relief"])
+#     total_specific_relief

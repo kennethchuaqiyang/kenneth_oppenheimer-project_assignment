@@ -21,6 +21,8 @@ ${filename}
 ${national_id}
 @{nat_id_list}
 ${hero_relief_from_table}
+${total_hero_relief_calculation}
+${total_db_calculation}
 ${UploadFile}    r"/uploadFile.csv"
 ${Invalid_Non_CSV_Excel_File}    r"/invalidNonCsvExcel.xlsx"
 ${Non_Existing_CSV}    r"/non_existing_check.csv"
@@ -193,3 +195,35 @@ Get Hero Relief From Table
  
     END
     Set Global Variable    ${hero_relief_from_table}
+
+Calculate Specific Heroes Hero Relieft From Table
+    Log To Console    Checking Hero Relief
+    ${total_hero_relief_calculation}    Set Variable    ${0}
+    FOR    ${index}    IN RANGE    1    ${subsequent_number_of_heroes}+1
+        ${natid_from_FE_Table} =    Get Text    xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[1]
+        
+           FOR    ${nat_id}    IN    @{nat_id_list}
+                ${national_id}    Set Variable    ${nat_id}
+                ${check_id_match} =    Helpfunction.check_two_national_id  ${national_id}  ${natid_from_FE_Table}
+                IF    ${check_id_match}
+                    ${hero_relief_from_table} =    Get Text    xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]
+                    ${total_hero_relief_calculation}=    Evaluate    ${total_hero_relief_calculation}+${hero_relief_from_table}
+                END
+        
+            END
+    END
+
+
+    Set Global Variable    ${total_hero_relief_calculation}
+Calculate Specific Heroes Relief From Database
+    ${total_db_calculation}    Set Variable    ${0}
+    FOR    ${nat_id}    IN    @{nat_id_list}
+        ${db_relief} =    Helpfunction.get_total_user_relief  ${nat_id}
+        ${total_db_calculation}=    Evaluate    ${total_db_calculation}+${db_relief}
+        Log To Console    db calculate
+        Log To Console    ${db_relief}
+        Log To Console    ${total_db_calculation}
+
+    END
+
+    Set Global Variable    ${total_db_calculation}

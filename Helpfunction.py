@@ -33,6 +33,11 @@ def round_to_2_dp(price):
     
     return format(price, '.2f')
 
+def obtainpricefromstatement(sentence):
+    splitsentence=sentence.split()
+    extractedPrice=round(float(splitsentence[0][1:]),2)
+    return extractedPrice
+
 def splittextforcheckprice(sentence, tax_relief):
     if str(tax_relief) in sentence:
         return True
@@ -62,6 +67,15 @@ def get_user_relief(nat_id):
         if hero["natid"]==nat_id:
             return hero["relief"]
     return -1
+
+def get_total_user_relief(nat_id):
+    heroes = curl_get_user()
+    total_specific_relief = 0
+    for hero in heroes:
+        if hero["natid"]==nat_id:
+            print(hero["relief"])
+            total_specific_relief= total_specific_relief+ float(hero["relief"])
+    return total_specific_relief
 
 
 def check_init_text(init_text):
@@ -343,6 +357,10 @@ def create_mass_full_details_requirement_csv():
     nat_id_list=create_csv_file_by_requirement(50, '01012018', 'm', True, '1000','100')
     return nat_id_list
 
+def create_two_full_random_details_requirement_csv():
+    nat_id_list=create_csv_file_by_requirement(2, '01012018', 'm', True, '1000','100')
+    return nat_id_list
+
 def create_single_full_details_requiremenet_big_M_csv():
     nat_id_list=create_csv_file_by_requirement(1, '01012018', 'M', False, '1000','100')
     return nat_id_list
@@ -520,10 +538,17 @@ def create_jumbled_column_csv():
     return nat_id_list
 
 def create_missing_column_csv():
-    nat_id_list=create_invalid_csv_file_excluding_nat_id_by_requirement_append_missing_columns(1, '01012018', 'm', False,'0', '1.00', '9979')
+    nat_id_list=create_invalid_csv_file_excluding_nat_id_by_requirement_append_missing_columns(1, '01012018', 'm', False,'0', '1.00', '9977')
     return nat_id_list
 
 def create_mixture_of_invalid_and_valid_data_csv():
     nat_id_list=create_invalid_csv_file_excluding_nat_id_by_requirement_append_always_one_invalid_row(1, '01012018', 'm', False,'0', '1.00', '9978')
     return nat_id_list
 
+def create_duplicated_ids_csv():
+    nat_id_list= create_csv_file_by_requirement_default_natid(1, '01012018', 'm', False, '100','1000', '9979')
+    return nat_id_list
+
+def create_hero_for_invalid_entry_no_relief_calculation():
+    nat_id_list=create_invalid_csv_file_excluding_nat_id_by_requirement(1, '1-Jan-2018', 'm', False, '0','0', '9996')
+    return nat_id_list
