@@ -1,3 +1,3 @@
 PATH=`pwd`:$PATH
 export PATH
-robot -d results ./
+robot -d Results ./

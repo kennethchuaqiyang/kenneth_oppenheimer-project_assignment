@@ -2,8 +2,7 @@
 Documentation    Login Functionality
 Library    SeleniumLibrary
 Library    XML
-Library    ../Functest.py
-Library    ../../Helpfunction.py
+Library    ../../Helper_Functions/Helpfunction.py
 Library    Collections
 Resource    ../../Resources/resources.robot    
 

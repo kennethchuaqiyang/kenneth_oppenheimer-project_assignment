@@ -4,7 +4,7 @@ Library  SeleniumLibrary
 Library    XML
 Library    Process
 Library    Collections
-Library    ../Helpfunction.py
+Library    ../Helper_Functions/Helpfunction.py
 
 *** Variables ***
 
@@ -37,7 +37,6 @@ ${Retrival_Zero_Relief_1_Person_Check}    r"/Zero_Relief_1_person_Bookeeper_Retr
 Open Website The Oppenheimer Project
 
     Open Browser  http://localhost:8080/  Chrome
-
     Wait Until Element Is Visible    xpath://*[@id="contents-main"]
 
 
@@ -48,20 +47,22 @@ Get Users From Database
 Calculate Total Price From Table
         
         ${init_table}=    SeleniumLibrary.Get Element Count    xpath://*[@id="contents"]/div[2]/table/tbody/tr
-
         @{PriceList}=    Create List
 
         FOR    ${index}    IN RANGE    1    ${init_table}+1
 
             ${var} =    Get Text    xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]
             Append To List    ${PriceList}    ${var}    
+        
         END
 
         ${sum_of_price_from_table} =    Set Variable    ${0.00}
+        
         FOR    ${element}    IN    @{PriceList}
 
             ${inidcated} =    Set Variable    ${element}
             ${sum_of_price_from_table} =    Evaluate    ${sum_of_price_from_table}+${inidcated}
+        
         END
 
         Set Global Variable    ${sum_of_price_from_table}
@@ -115,33 +116,40 @@ Get Database Rounded Sum Of Relief
     Set Global Variable    ${rounded_total_database_relief}
 
 Click On Refresh Tax Relief Table Button
+
     Click Element    xpath://*[@id="contents"]/button[1]
 
 
 
 Click On Dispense Now Button
+
     Click Element    xpath://*[@id="contents"]/a[2]
 
 Set Initial Number Of Heroes
+
     Get Number Of Heroes
     ${initial_number_of_heroes}    Set Variable    ${number_of_users}
+
     Set Global Variable    ${initial_number_of_heroes}
 
 Set natid for person
+
     Get Number Of Heroes
     ${national_id} =  Helpfunction.create_national_id  ${initial_number_of_heroes}
+
     Set Global Variable    ${national_id}
 
 Set Subsequent Number Of Heroes
+
     Get Number Of Heroes
     ${subsequent_number_of_heroes}    Set Variable    ${number_of_users}
+
     Set Global Variable    ${subsequent_number_of_heroes}
 
 Sending Files Through FE
-    # ${filename}  Evaluate  ${FE_Zero_Relief_1_Person_Check}
+
     ${full_filename} =  Helpfunction.working_directory  ${filename}
-    Log To Console    ${full_filename}
-    # Wait Until Element Is Visible    xpath://*[@id="contents"]/div[1]/div[2]/input
+
     Choose File    xpath://*[@id="contents"]/div[1]/div[2]/input    ${full_filename}
 
 Check For Valid Added National ID
@@ -151,33 +159,41 @@ Check For Valid Added National ID
     Table Column Should Contain    xpath://*[@id="contents"]    1    ${national_id}
 
 Check For Non Valid Not Added National ID
-    Log To Console    Entering to check non valid
-    Log To Console    ${national_id}
+
     Wait Until Element Is Visible    xpath://*[@id="contents"]
 
     ${non_exist}    Set Variable    ${True}
         
     FOR    ${index}    IN RANGE    1    ${subsequent_number_of_heroes}+1
+
         ${natid_from_FE_Table} =    Get Text    xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[1]
         ${check_id_match} =    Helpfunction.check_two_national_id  ${national_id}  ${natid_from_FE_Table}
+
         IF    ${check_id_match} 
-            Log To Console    ${index}
+
             ${non_exist}    Set Variable    ${False}
+
         END
  
     END
     IF    ${non_exist} == ${False}
+
         Fail
+
     END
 
 Get Browser Console Log Entries
+
     ${selenium}=    Get Library Instance    SeleniumLibrary
     ${webdriver}=    Set Variable     ${selenium._drivers.active_drivers}[0]
     ${log entries}=    Evaluate    $webdriver.get_log('browser')
+
     [Return]    ${log entries}
 
 Check NatIds Exist in Table
+
    FOR    ${nat_id}    IN    @{nat_id_list}
+
         ${national_id}    Set Variable    ${nat_id}
         Set Global Variable    ${national_id}
         Check For Valid Added National ID
@@ -185,44 +201,55 @@ Check NatIds Exist in Table
     END
 
 Get Hero Relief From Table
+
     FOR    ${index}    IN RANGE    1    ${subsequent_number_of_heroes}+1
+
         ${natid_from_FE_Table} =    Get Text    xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[1]
         ${check_id_match} =    Helpfunction.check_two_national_id  ${national_id}  ${natid_from_FE_Table}
+
         IF    ${check_id_match} 
-            Log To Console    ${index}
+
             ${hero_relief_from_table} =    Get Text    xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]
+
         END
  
     END
+
     Set Global Variable    ${hero_relief_from_table}
 
 Calculate Specific Heroes Hero Relieft From Table
-    Log To Console    Checking Hero Relief
+
     ${total_hero_relief_calculation}    Set Variable    ${0}
+
     FOR    ${index}    IN RANGE    1    ${subsequent_number_of_heroes}+1
+
         ${natid_from_FE_Table} =    Get Text    xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[1]
         
            FOR    ${nat_id}    IN    @{nat_id_list}
+
                 ${national_id}    Set Variable    ${nat_id}
                 ${check_id_match} =    Helpfunction.check_two_national_id  ${national_id}  ${natid_from_FE_Table}
+
                 IF    ${check_id_match}
+
                     ${hero_relief_from_table} =    Get Text    xpath://*[@id="contents"]/div[2]/table/tbody/tr[${index}]/td[2]
                     ${total_hero_relief_calculation}=    Evaluate    ${total_hero_relief_calculation}+${hero_relief_from_table}
+
                 END
         
             END
     END
 
-
     Set Global Variable    ${total_hero_relief_calculation}
+
 Calculate Specific Heroes Relief From Database
+
     ${total_db_calculation}    Set Variable    ${0}
+
     FOR    ${nat_id}    IN    @{nat_id_list}
+
         ${db_relief} =    Helpfunction.get_total_user_relief  ${nat_id}
         ${total_db_calculation}=    Evaluate    ${total_db_calculation}+${db_relief}
-        Log To Console    db calculate
-        Log To Console    ${db_relief}
-        Log To Console    ${total_db_calculation}
 
     END
 

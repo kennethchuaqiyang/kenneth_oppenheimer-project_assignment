@@ -2,8 +2,7 @@
 Documentation    Login Functionality
 Library    SeleniumLibrary
 Library    XML
-Library    ../Functest.py
-Library    ../../Helpfunction.py
+Library    ../../Helper_Functions/Helpfunction.py
 Library    Collections
 Resource    ../../Resources/resources.robot    
 
@@ -16,7 +15,7 @@ ${init_text}
 
 Verify Governor Can Dispense Cash Even when There Is Zero Relief
     [Documentation]  This test case verifies the initial settings for the table for The Oppenheimer Project
-    [Tags]  Initial
+    [Tags]  Governor    Dispense Cash    Zero Relief    Heroes Present
     
     ${current_total_sum}=    HelpFunction.curl_get_relief_summary_relief
     IF    ${current_total_sum} != 0
