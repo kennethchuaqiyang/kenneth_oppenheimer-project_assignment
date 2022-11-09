@@ -2,14 +2,14 @@
 ```
 Instruction to  deploy
 
-Step 1: Ensure oppenheimer project is running</ins>
+Step 1: Ensure oppenheimer project is running<
 
 1. git clone https://github.com/strengthandwill/oppenheimer-project-dev.git
 2. java -jar <directory_to_jar>/OppenheimerProjectDev.jar
 ```
 -----
 ```
-Step 2: Copy the repository for test case and deploy</ins>
+Step 2: Copy the repository for test case and deploy
 
 1. git clone https://github.com/kennethchuaqiyang/kenneth_oppenheimer-project_assignment.git
 2. On terminal, run
@@ -18,7 +18,7 @@ Step 2: Copy the repository for test case and deploy</ins>
 ```
 -----
 ```
-<ins> **Notable Bugs From Testing**</ins>
+Notable Bugs From Testing
 
 1. Governors can deploy cash when there are no heroes. It causes the test case to crash
 2. When Clerk try to use an invalid path to upload the file through the api call, it will cause system to     crash. Thus it is skipped
