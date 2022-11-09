@@ -1,13 +1,15 @@
 -----
 ```
-<ins> **Instruction to  deploy** </ins>
+Instruction to  deploy
 
-<ins>Step 1: Ensure oppenheimer project is running</ins>
+Step 1: Ensure oppenheimer project is running</ins>
 
 1. git clone https://github.com/strengthandwill/oppenheimer-project-dev.git
 2. java -jar <directory_to_jar>/OppenheimerProjectDev.jar
-
-<ins>Step 2: Copy the repository for test case and deploy</ins>
+```
+-----
+```
+Step 2: Copy the repository for test case and deploy</ins>
 
 1. git clone https://github.com/kennethchuaqiyang/kenneth_oppenheimer-project_assignment.git
 2. On terminal, run
