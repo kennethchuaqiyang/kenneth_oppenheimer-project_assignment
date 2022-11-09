@@ -1,3 +1,5 @@
+-----
+
 <ins> **Instruction to  deploy** </ins>
 
 <ins>Step 1: Ensure oppenheimer project is running</ins>
@@ -26,3 +28,5 @@
 8. If Clerk try to upload national id less than 4 character from front end and api call, it will cause the server to crash. The test case is skipped but need to be reported
 9. System can allow duplicated national id to be uploaded. Thus the test case failed
 10. When no gender is uploaded, it may cause the system to crash momentarily. The test case is skipped but need to be reported
+
+-----
