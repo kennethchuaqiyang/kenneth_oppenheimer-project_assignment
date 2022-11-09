@@ -1,4 +1,4 @@
------
+>-----
 >
 ><ins> **Instruction to  deploy** </ins>
 >
@@ -14,7 +14,7 @@
 >3. source ./deploy
 >4. Report will be in results folder under report.html
 >
------
+>-----
 >
 ><ins> **Notable Bugs From Testing**</ins>
 >
@@ -29,4 +29,4 @@
 >9. System can allow duplicated national id to be uploaded. Thus the test case failed
 >10. When no gender is uploaded, it may cause the system to crash momentarily. The test case is skipped but need to be reported
 >
------
+>-----
