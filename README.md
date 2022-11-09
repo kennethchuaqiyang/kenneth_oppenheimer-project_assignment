@@ -1,6 +1,6 @@
-# </ins> Instructions deploy </ins>
+</ins> **Instruction to  deploy** </ins>
 
-## <ins>Ensure oppenheimer project is running</ins>
+<ins>1. Ensure oppenheimer project is running</ins>
 
 # git clone https://github.com/strengthandwill/oppenheimer-project-dev.git
 # java -jar <directory_to_jar>/OppenheimerProjectDev.jar
