@@ -1,6 +1,6 @@
 # To deploy
 
-# Ensure project is running
+<ins>Ensure project is running</ins>
 
 # git clone https://github.com/strengthandwill/oppenheimer-project-dev.git
 # java -jar <directory_to_jar>/OppenheimerProjectDev.jar
