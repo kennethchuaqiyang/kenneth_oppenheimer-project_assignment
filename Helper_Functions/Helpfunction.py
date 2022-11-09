@@ -126,15 +126,93 @@ def insert_random_data():
     response = requests.post('http://localhost:8080/calculator/insertRandomToDatabaseForNoReason', params=param)
     return
 
-def insert_1_person():
+def insert_1_person(name, gender, birthday, natid, salary, tax):
 
-    json_definied={"name": "abc", "gender":"m", "birthday":"01012019", "natid":"12345","salary":"100","tax":"100" }
+    json_definied={"name": name, "gender":gender, "birthday":birthday, "natid":natid,"salary":salary,"tax":tax }
     response = requests.post('http://localhost:8080/calculator/insert', json=json_definied)
     return
-    
-def insert_multiple_people():
+
+def insert_1_person_missing_name():
+
+    json_definied={"gender":"m", "birthday":"01012019", "natid":"12345","salary":"100","tax":"100" }
+    response = requests.post('http://localhost:8080/calculator/insert', json=json_definied)
+    return
+
+def insert_1_person_missing_gender():
+
+    json_definied={"name": "abc", "birthday":"01012019", "natid":"12345","salary":"100","tax":"100" }
+    response = requests.post('http://localhost:8080/calculator/insert', json=json_definied)
+    return
+
+def insert_1_person_missing_birthday():
+
+    json_definied={"name": "abc", "gender":"m", "natid":"12345","salary":"100","tax":"100" }
+    response = requests.post('http://localhost:8080/calculator/insert', json=json_definied)
+    return
+
+def insert_1_person_missing_nat_id():
+
+    json_definied={"name": "abc", "gender":"m", "birthday":"01012019","salary":"100","tax":"100" }
+    response = requests.post('http://localhost:8080/calculator/insert', json=json_definied)
+    return
+
+def insert_1_person_missing_salary():
+
+    json_definied={"name": "abc", "gender":"m", "birthday":"01012019", "natid":"12345","tax":"100" }
+    response = requests.post('http://localhost:8080/calculator/insert', json=json_definied)
+    return
+
+def insert_1_person_missing_tax():
+
+    json_definied={"name": "abc", "gender":"m", "birthday":"01012019", "natid":"12345","salary":"100" }
+    response = requests.post('http://localhost:8080/calculator/insert', json=json_definied)
+    return
+
+def all_valid_data_insert_1_person():
+
+    insert_1_person("adam", "m", "01012019", "12345", "1000", "100")
+    return
+
+def invalid_gender_insert_1_person():
+
+    insert_1_person("adam", "male", "01012019", "12345", "1000", "100")
+    return
+
+def invalid_birthday_insert_1_person():
+
+    insert_1_person("adam", "m", "01-Nov-2019", "12345", "1000", "100")
+    return
+
+def invalid_national_id_insert_1_person():
+
+    insert_1_person("adam", "m", "01012019", "1", "1000", "100")
+    return
+
+def invalid_salary_insert_1_person():
+
+    insert_1_person("adam", "male", "01012019", "12345", "abc", "100")
+    return
+
+def invalid_tax_insert_1_person():
+
+    insert_1_person("adam", "male", "01012019", "12345", "1000", "abc")
+    return
+
+def insert_multiple_people_all_valid():
 
     json_definied=[{"name": "abc", "gender":"m", "birthday":"01012019", "natid":"67890","salary":"100","tax":"100"},{"name": "abc", "gender":"m", "birthday":"01012019", "natid":"77890","salary":"100","tax":"100"}] 
+    response = requests.post('http://localhost:8080/calculator/insertMultiple', json=json_definied)
+    return
+
+def insert_multiple_people_non_valid():
+
+    json_definied=[{"name": "abc", "gender":"male", "birthday":"01012019", "natid":"67890","salary":"100","tax":"100"},{"name": "abc", "gender":"male", "birthday":"01012019", "natid":"77890","salary":"100","tax":"100"}] 
+    response = requests.post('http://localhost:8080/calculator/insertMultiple', json=json_definied)
+    return
+
+def insert_multiple_people_some_valid():
+
+    json_definied=[{"name": "abc", "gender":"m", "birthday":"01012019", "natid":"67890","salary":"100","tax":"100"},{"name": "abc", "gender":"male", "birthday":"01012019", "natid":"77890","salary":"100","tax":"100"}] 
     response = requests.post('http://localhost:8080/calculator/insertMultiple', json=json_definied)
     return
 
