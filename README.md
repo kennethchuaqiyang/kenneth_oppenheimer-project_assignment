@@ -1,4 +1,4 @@
-</ins> **Instruction to  deploy** </ins>
+<ins> **Instruction to  deploy** </ins>
 
 <ins>Step 1: Ensure oppenheimer project is running</ins>
 
@@ -11,6 +11,8 @@
 2. On terminal, run
 3. source ./deploy
 4. Report will be in results folder under report.html
+
+-----
 
 <ins> **Notable Bugs From Testing**</ins>
 
