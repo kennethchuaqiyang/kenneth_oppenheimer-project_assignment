@@ -1,4 +1,12 @@
 # To deploy
+
+# Ensure project is running
+
+# git clone https://github.com/strengthandwill/oppenheimer-project-dev.git
+# java -jar <directory_to_jar>/OppenheimerProjectDev.jar
+
+# Copy the repository for test case and deploy
+
 # git clone https://github.com/kennethchuaqiyang/kenneth_oppenheimer-project_assignment.git
 
 # On terminal, run
