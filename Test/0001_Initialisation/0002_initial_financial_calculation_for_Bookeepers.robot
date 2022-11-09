@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Login Functionality
+Documentation    Initial Check for Financial Calculation For Tabulation And Correspondence Of Relevant Information For Oppenheimer Project
 Library    SeleniumLibrary
 Library    XML
 Library    ../../Helper_Functions/Helpfunction.py
@@ -16,7 +16,9 @@ Verify Bookkeeper Can Correspond initial Database Total Relief Of The Oppenheime
 
     [Documentation]  This test case ensure Bookkeeper total sum in database will corresponds to the relief statmenet api
     [Tags]  Initial    Bookeeper    Sum of relief    Db Total    Api    taxReliefSummary
-
+    
+    Helpfunction.rakeDatabase
+    
     Get Number Of Heroes
     Get Financial Summary For Number Of Heroes From Api
     Get Financial Summary For Total Relief From Api
@@ -39,6 +41,8 @@ Verify Bookeeper Can Correspond Initial Text of Summary Relief Statement Of The 
     [Documentation]  This test case ensure Bookkeeper total sum in database will corresponds to the relief statmenet api
     [Tags]  Initial    Bookeeper    Sum of relief    Db Total    Relief Summary Statement
 
+    Helpfunction.rakeDatabase
+    
     Get Number Of Heroes
 
     Get Database Rounded Sum Of Relief
@@ -84,6 +88,8 @@ Verify Bookeeper Can Ensure Initial Text of Summary Table Of The Oppenheimer Pro
     [Documentation]  This test case verifies the initial settings for the relief statement do not change when Tax Relief button is pressed and no additional data is added
     [Tags]  Initial    Bookeeper    No Additional Data    Tax Refresh Button    Relief Summary Statement No Change
     
+    Helpfunction.rakeDatabase
+
     Get Number Of Heroes
 
      IF    ${number_of_users} == ${0}

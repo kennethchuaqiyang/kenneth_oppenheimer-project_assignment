@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Login Functionality
+Documentation    Initial Test That Governor Should Not Be Able To Dispense When There Are No Heroes For Oppenheimer Project
 Library    SeleniumLibrary
 Library    XML
 Library    ../../Helper_Functions/Helpfunction.py
@@ -17,6 +17,8 @@ Verify Initial Dispensing Of Cash When There Is Amount To Be Dispensed
 
     [Documentation]  This test case verifies the Governor can only dispnse cash when there are heroes
     [Tags]  Initial    Governor    No Heros No Cash    Heroes Present
+    
+    Helpfunction.rakeDatabase
     
     Get Number Of Heroes
 

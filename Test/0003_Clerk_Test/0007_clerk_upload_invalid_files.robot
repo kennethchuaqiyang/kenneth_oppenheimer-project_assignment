@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Login Functionality
+Documentation    Test Clerk Not Able To Upload Heroes Under Certain Condition For Oppenheimer Project
 Library    SeleniumLibrary
 Library    XML
 Library    ../../Helper_Functions/Helpfunction.py

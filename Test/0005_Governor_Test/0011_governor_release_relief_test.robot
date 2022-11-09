@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Login Functionality
+Documentation    Ensure Governor Can Dispense Cash For Oppenheimer Project
 Library    SeleniumLibrary
 Library    XML
 Library    ../../Helper_Functions/Helpfunction.py

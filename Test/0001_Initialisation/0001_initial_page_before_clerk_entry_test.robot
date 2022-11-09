@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Login Functionality
+Documentation    Testing Initial Settings Of Oppenheimer Project Before Clerk Entry
 Library    SeleniumLibrary
 Library    XML
 Library    ../../Helper_Functions/Helpfunction.py
@@ -17,6 +17,11 @@ Verify Initial Text of Summary Table Of The Oppenheimer Project Before Entry Fro
     [Documentation]  This test case verifies the initial settings for the text when there is data for The Oppenheimer Project and table when there is data before clerk entry
     [Tags]  Initial    Initial Text When No Data    Table WHen There is Data    Before Clerk Entry
     
+    Helpfunction.rakeDatabase
+
+    Reload Page
+    Sleep    2s
+
     Get Number Of Heroes
 
      IF    ${number_of_users} == ${0}
@@ -66,6 +71,8 @@ Verify Initial Text of Summary Relief Text Of The Oppenheimer Project Correspond
     [Documentation]  This test case verifies the initial relief summary text for The Oppenheimer Project before clerk entry
     [Tags]  Initial    Relief Summary Text    Before Clerk Entry
 
+    Helpfunction.rakeDatabase
+    
     Get Number Of Heroes
 
     Get Financial Summary For Number Of Heroes From Api
@@ -128,6 +135,8 @@ Verify Initial Text of Summary Relief Statement Of The Oppenheimer Project Corre
 
     [Documentation]  This test case verifies the initial relief summary text correspond to front end table for The Oppenheimer Project Before Clerk Entry
     [Tags]  Initial    Corresponding Front End Table To Relief Statement    Before Clerk Entry
+    
+    Helpfunction.rakeDatabase
     
     Get Number Of Heroes
 
@@ -194,6 +203,8 @@ Verify Initial Sum of Relief From Database Of The Oppenheimer Project Correspond
     [Documentation]  This test case verifies the initial total from table correspond to database total
     [Tags]  Initial    Total Sum correspond    Db    Table
     
+    Helpfunction.rakeDatabase
+
     Get Number Of Heroes
     Get Database Rounded Sum Of Relief
 

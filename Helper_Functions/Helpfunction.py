@@ -114,6 +114,30 @@ def post_file_api(file_to_be_uploaded):
     response = requests.post('http://localhost:8080/calculator/uploadLargeFileForInsertionToDatabase', files=file)
     return response.text, response.status_code
 
+
+def rakeDatabase():
+
+    response = requests.post('http://localhost:8080/calculator/rakeDatabase')
+    return
+
+def insert_random_data():
+
+    param = {'count':3}
+    response = requests.post('http://localhost:8080/calculator/insertRandomToDatabaseForNoReason', params=param)
+    return
+
+def insert_1_person():
+
+    json_definied={"name": "abc", "gender":"m", "birthday":"01012019", "natid":"12345","salary":"100","tax":"100" }
+    response = requests.post('http://localhost:8080/calculator/insert', json=json_definied)
+    return
+    
+def insert_multiple_people():
+
+    json_definied=[{"name": "abc", "gender":"m", "birthday":"01012019", "natid":"67890","salary":"100","tax":"100"},{"name": "abc", "gender":"m", "birthday":"01012019", "natid":"77890","salary":"100","tax":"100"}] 
+    response = requests.post('http://localhost:8080/calculator/insertMultiple', json=json_definied)
+    return
+
 #Check Successful API Call
 def check_success_response(response):
 

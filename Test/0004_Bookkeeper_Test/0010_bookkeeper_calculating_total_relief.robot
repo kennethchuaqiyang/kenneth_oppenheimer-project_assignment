@@ -1,6 +1,6 @@
 *** Settings ***
 
-Documentation    Login Functionality
+Documentation    Test Bookkeeper Has Functionality To Tabulate Total And Correspond To The Relevant Section For Oppenheimer Project
 Library    SeleniumLibrary
 Library    XML
 Library    ../../Helper_Functions/Helpfunction.py
