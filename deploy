@@ -1,3 +1,4 @@
 PATH=`pwd`:$PATH
 export PATH
 robot -d Results ./
+open -a 'google chrome' ./results/log.html
